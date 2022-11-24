@@ -1,5 +1,5 @@
 # 決済先生
-member : suzusou
+### member : ####suzusou
          Surugawann
          MONTA-TAKUMU
          ibuki678
