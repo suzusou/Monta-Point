@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { doc, setDoc, getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { doc, setDoc, getFirestore, collection, onSnapshot, getDocs } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // MontaPointのFirebaseの情報
 const firebaseConfig = {
@@ -16,14 +16,6 @@ const app = initializeApp(firebaseConfig);
 
 // Firestoreを取得
 const db = getFirestore(app);
-
-// コレクションの取得
-// const colRef = collection(db, "決済先生");
-// console.log(colRef);
-
-//ドキュメントの取得
-// const docRef = doc(colRef, "trident");
-// console.log(docRef);
 
 // 各要素の取得
 var store = document.getElementById("storeform");
@@ -50,11 +42,12 @@ document.getElementById("send").addEventListener("click", async function () {
   if (store.value != "" && address.value != "" && pay != "") {
     // Firestoreに書き込む
     try {
-      await setDoc(doc(db, "決済先生", store.value), {
+      await setDoc(doc(db, "決済先生sample", store.value), {
         address: address.value,
         pay: pay
       });
       console.log("登録完了しました。");
+      alert("登録完了しました。");
     } catch (e) {
       console.log(e);
     }
@@ -62,8 +55,10 @@ document.getElementById("send").addEventListener("click", async function () {
     payStr = "";
     pay = "";
     // リアルタイムの更新を取得する
-    const unsub = onSnapshot(doc(db, "決済先生", store.value), (doc) => {
-      console.log("Current data: ", doc.data());
+    const unsub = onSnapshot(doc(db, "決済先生sample", store.value), (doc) => {
+      console.log("store data: ", doc.id);
+      console.log("address data: ", doc.data().address);
+      console.log("pay data: ", doc.data().pay);
       //　GoogleMapのPINを立てる処理
 
 
@@ -73,4 +68,12 @@ document.getElementById("send").addEventListener("click", async function () {
     });
   }
 });
+
+// 全ての情報を取得
+window.onload = async function () {
+  const shot = await getDocs(collection(db, "決済先生"));
+  shot.forEach((doc) => {
+    console.log(doc.id, "=>", doc.data().pay);
+  })
+}
 
