@@ -14,7 +14,6 @@ body {
     width: 50%;
     margin-top: 60px;
     margin-right: 10px;
-    z-index: -1;
 }
 
 .form {
@@ -69,6 +68,7 @@ header {
     padding: 15px 0;
     background-color: beige;
     color: black;
+    z-index: 2;
 }
 
 header .headline {
