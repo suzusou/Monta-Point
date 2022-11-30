@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "M PLUS Rounded 1c";
+}
+
+body {
+    display: flex;
+}
+
+#map {
+    height: 100vh;
+    width: 50%;
+    margin-top: 60px;
+    margin-right: 10px;
+    z-index: -1;
+}
+
+.form {
+    height: 100%;
+    width: 50%;
+    margin-top: 65px;
+    margin-right: 10px;
+}
+
+.address {
+    margin-top: 5px;
+}
+
+.pay {
+    margin-top: 5px;
+}
+
+.btn-group {
+    width: 50vw;
+    margin-top: 10px;
+}
+
+.btn {
+    border-radius: 0;
+    margin-right: 10px;
+    border: 1.5px solid transparent;
+}
+
+.btn-outline-primary {
+    border-color: #ddd;
+}
+
+
+.form>input[type="text"] {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    outline: none;
+    margin-top: 10px;
+}
+
+.form>input[type="submit"] {
+    padding: 5px 15px;
+    margin-top: 15px;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    padding: 15px 0;
+    background-color: beige;
+    color: black;
+}
+
+header .headline {
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 20px;
+    position: fixed;
+
+}
+
+.nav-list {
+    margin-left: 170px;
+    font-size: 22px;
+    list-style: none;
+}
+
+.nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+}
+
+.nav-list-item>a {
+    text-decoration: none;
+    color: black;
+}
+
+header#header-all {
+    position: fixed;
+}
+
+#food-acordion {
+    display: flex;
+}
+
+#food-child {
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+/*カテゴリ一覧表示*/
+.menu {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.menu>li {
+    display: inline-block;
+    position: fixed;
+    width: 175px;
+}
+
+.menu>li>ul {
+    display: none;
+}
+
+.menu>li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+}
+
+#category-list {
+    border: ridge 2px;
+}
+
+/* 検索レイアウト */
+#search-all {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+    outline: 0;
+}
+
+#search-box {
+    position: absolute;
+    right: 90px;
+    width: 225px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding-left: 5px;
+    border: 2px solid #ddd;
+    top: 9px;
+    outline: none;
+}
+
+#search-submit {
+    position: absolute;
+    border: none;
+    top: 10px;
+    right: 6px;
+    padding: 2px 15px;
+    background-color: lightseagreen;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+}
+
+footer {
+    display: none;
+}
+
+@media(max-width:960px) {
+
+    body {
+        display: block;
+    }
+
+    #header-all {
+        display: none;
+    }
+
+    .form {
+        width: 95vw;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+
+    #map {
+        height: 50vh;
+        width: 100vw;
+        margin-top: 0px;
+    }
+
+    .btn-group {
+        width: 95vw;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+    }
+
+    .form>input[type="submit"] {
+        margin-bottom: 10vh;
+    }
+
+    /*footerレイアウト開始*/
+    footer {
+        /*footerの装飾*/
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 6.5vh;
+        background-color: #89c7de;
+        position: fixed;
+        /*←絶対位置*/
+        bottom: 0;
+        /*下に固定*/
+        z-index: 2;
+        /* 上にくるようにする */
+    }
+
+    #ul-list-item1 {
+        width: 31vw;
+        height: 4vh;
+        margin-left: 12vw;
+        margin-top: 10px;
+        list-style: none;
+    }
+
+    #ul-list-item1>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #ul-list-item2 {
+        width: 31vw;
+        height: 4vh;
+        margin-top: 10px;
+        list-style: none;
+    }
+
+    #ul-list-item2>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #ul-list-item3 {
+        width: 31vw;
+        height: 4vh;
+        margin-top: 10px;
+        list-style: none;
+    }
+
+    #ul-list-item3>a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /*footerレイアウト終了*/
+}
