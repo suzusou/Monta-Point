@@ -62,7 +62,7 @@ body {
     padding: 5px 15px;
     margin-top: 15px;
 }
-
+/* ヘッダー部分 */
 header {
     height: 60px;
     width: 100%;
@@ -172,6 +172,8 @@ header#header-all {
     cursor: pointer;
     box-shadow: 1px 1px 5px black;
 }
+
+/* ヘッダー部分 */
 
 footer {
     display: none;
