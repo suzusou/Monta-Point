@@ -3,12 +3,18 @@ import { doc, setDoc, getFirestore, collection, onSnapshot, getDocs } from "http
 
 // MontaPointのFirebaseの情報
 const firebaseConfig = {
-  apiKey: "AIzaSyD_79sImJA0dXW57NOBc_g0YivQUFd5Z9s",
-  authDomain: "montapoint-7b9dd.firebaseapp.com",
-  projectId: "montapoint-7b9dd",
-  storageBucket: "montapoint-7b9dd.appspot.com",
-  messagingSenderId: "586924704219",
-  appId: "1:586924704219:web:790e06214656936c2427fe"
+  // apiKey: "AIzaSyD_79sImJA0dXW57NOBc_g0YivQUFd5Z9s",
+  // authDomain: "montapoint-7b9dd.firebaseapp.com",
+  // projectId: "montapoint-7b9dd",
+  // storageBucket: "montapoint-7b9dd.appspot.com",
+  // messagingSenderId: "586924704219",
+  // appId: "1:586924704219:web:790e06214656936c2427fe"
+  apiKey: "AIzaSyBzEIe0Rd4_cSWPjDuwuiMsYMGXd1VBCqk",
+  authDomain: "samplemonta-83e60.firebaseapp.com",
+  projectId: "samplemonta-83e60",
+  storageBucket: "samplemonta-83e60.appspot.com",
+  messagingSenderId: "556508241530",
+  appId: "1:556508241530:web:093ee42370db4f2c7765c3"
 };
 
 // Firebaseの初期化
@@ -25,7 +31,6 @@ var address = document.getElementById("addressform");
 var settlement = document.getElementsByName("settlement");
 var payStr = "";
 var pay = "";
-
 
 // 送信ボタンが押された処理
 document.getElementById("send").addEventListener("click", async function () {
@@ -61,8 +66,7 @@ document.getElementById("send").addEventListener("click", async function () {
       console.log("pay data: ", doc.data().pay);
       //　GoogleMapのPINを立てる処理
 
-
-
+      window.globalFunction.showAddress();
 
       // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
     });
@@ -70,10 +74,12 @@ document.getElementById("send").addEventListener("click", async function () {
 });
 
 // 全ての情報を取得
-window.onload = async function () {
-  const shot = await getDocs(collection(db, "決済先生"));
-  shot.forEach((doc) => {
-    console.log(doc.id, "=>", doc.data().pay);
-  })
-}
+// window.onload = async function () {
+//   const shot = await getDocs(collection(db, "決済先生"));
+//   shot.forEach((doc) => {
+//     console.log(doc.id, "=>", doc.data().pay);
+//   })
+// }
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 

@@ -18,9 +18,7 @@ function initMap() {
 
 function showAddress() {
 
-    // var query = document.getElementById('query').value;
-
-    
+    var query = document.getElementById('storeform').value;
 
     var url = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&results=100&query=" + encodeURI(query) + "&output=json&callback=showResult";
     callJSONP(url);
@@ -79,7 +77,7 @@ function showResult(result) {
 
                 // content: e.latLng.toString() //イベントの発生した位置を toString() で文字列に変換
 
-                content: '<img src="./../images/image-sample' + rand + '.jpg" width="70" height="70" alt="home" />'
+                // content: '<img src="./../images/image-sample' + rand + '.jpg" width="70" height="70" alt="home" />'
 
             });
 
@@ -106,3 +104,6 @@ function showResult(result) {
     }
 
 }
+
+window.globalFunction = {};
+window.globalFunction.showAddress = showAddress;
