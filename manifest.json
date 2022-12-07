@@ -1,0 +1,21 @@
+{
+    "name": "montapoint",
+    "short_name": "monta",
+    "description": "PWAテスト用",
+    "icons": [
+        {
+            "src": "icon/iconk.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon/iconk25.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "index.html",
+    "display": "fullscreen",
+    "theme_color": "green",
+    "background_color": "blue"
+}

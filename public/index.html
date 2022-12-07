@@ -37,6 +37,17 @@
         body { border-top: 16px solid #ffa100; }
       }
     </style>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon/favicon.ico">
+    <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js').then(registration => {
+              console.log('successful',registration);
+          }).catch(err => {
+              console.log('failed',err);
+          });
+      }
+  </script>
   </head>
   <body>
     <div id="message">
