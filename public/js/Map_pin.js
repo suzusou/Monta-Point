@@ -119,5 +119,4 @@ function showResult(result) {
 }
 
 window.globalFunction = {};
-window.globalFunction.Count = count;
 window.globalFunction.showAddress = showAddress;

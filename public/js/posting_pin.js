@@ -9,12 +9,6 @@ const firebaseConfig = {
   storageBucket: "montapoint-7b9dd.appspot.com",
   messagingSenderId: "586924704219",
   appId: "1:586924704219:web:790e06214656936c2427fe"
-  // apiKey: "AIzaSyBzEIe0Rd4_cSWPjDuwuiMsYMGXd1VBCqk",
-  // authDomain: "samplemonta-83e60.firebaseapp.com",
-  // projectId: "samplemonta-83e60",
-  // storageBucket: "samplemonta-83e60.appspot.com",
-  // messagingSenderId: "556508241530",
-  // appId: "1:556508241530:web:093ee42370db4f2c7765c3"
 };
 
 // Firebaseの初期化
@@ -36,6 +30,7 @@ var content = "";
 
 // 送信ボタンが押された処理
 document.getElementById("send").addEventListener("click", async function () {
+
   // i番目のチェックボックスがチェックされているかを判定
   for (var i = 0; i < settlement.length; i++) {
     if (settlement[i].checked) {
@@ -43,8 +38,11 @@ document.getElementById("send").addEventListener("click", async function () {
       img.push(settlement[i].value);
     }
   }
+
+  // 何が押されたかをコンソールに出す
   console.log(img);
 
+  // 画像のパスを変数に代入する
   for (var i = 0; i < img.length; i++) {
     switch (img[i]) {
       case "LINE Pay":
@@ -89,7 +87,7 @@ document.getElementById("send").addEventListener("click", async function () {
     }
   }
 
-
+  // 画像のパスの確認をする
   console.log(content);
   // 最後の一文字を消去
   pay = payStr.slice(0, -1);
@@ -97,26 +95,23 @@ document.getElementById("send").addEventListener("click", async function () {
   // 全項目を入力しているかを判定
   if (store.value != "" && address.value != "" && pay != "") {
     window.globalFunction.showAddress();
-    setTimeout(function() {
-      exam();
-    }, 3000)
-    
-    // window.globalFunction.showAddress(SetFirebase);
+    // 0.1秒処理を待つ
+    setTimeout(function () {
+      SetFirebase();
+    }, 500)
 
-    // payStrとpayを初期化する
-    // payStr = "";
-    // pay = "";
   }
+  // imgを初期化する
   img = [];
 
-  async function exam() {
-    console.log("%");
+  async function SetFirebase() {
+    
+    // 検索結果が見つかったら
     if (count > 0) {
-      console.log("count"+count);
-      console.log("aaa");
+      console.log("検索結果が見つかった"+ count);
       // Firestoreに書き込む
       try {
-      await setDoc(doc(db, "決済先生sample", store.value), {
+        await setDoc(doc(db, "決済先生sample", store.value), {
           address: address.value,
           pay: pay
         });
@@ -125,32 +120,27 @@ document.getElementById("send").addEventListener("click", async function () {
       } catch (e) {
         console.log(e);
       }
-      
-      
+
+
       // リアルタイムの更新を取得する
       // const unsub = onSnapshot(doc(db, "決済先生sample", store.value), (doc) => {
       //   console.log("store data: ", doc.id);
       //   console.log("address data: ", doc.data().address);
       //   console.log("pay data: ", doc.data().pay);
       //　GoogleMapのPINを立てる処理
-  
-  
-  
+
+
+
       // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
       // });
     } else {
-      console.log("window.globalFunction.Count:  " + count);
+      console.log("posting_pin.js:件数" + count);
     }
+    // payStrとpayを初期化する
     payStr = "";
     pay = "";
   }
-
 });
-
-
-
-
-
 
 
 // 全ての情報を取得
@@ -162,6 +152,7 @@ document.getElementById("send").addEventListener("click", async function () {
 // }
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------*/
+// グローバル変数の設定
 window.global = {};
 window.global.content = content;
-// window.global.SetFirebase = exam();
+
