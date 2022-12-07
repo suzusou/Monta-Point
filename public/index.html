@@ -1,134 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monta-Point開発</title>
-    <script src="https://kit.fontawesome.com/9cb34e4153.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/9.14.0/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/9.14.0/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/9.14.0/firebase-performance-compat.js"></script>
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
 
-
-<body>
-
-    <!-- header開始 -->
-    <header id="header-all">
-        <h6 class="headline">
-            <a>決済先生</a>
-        </h6>
-        <ul class="nav-list">
-            <li class="nav-list-item">
-                <a href="index.html"><i class="fa-solid fa-house"></i> ホーム</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="google_maps.html"><i class="fa-solid fa-location-dot"></i> 一覧</a>
-            </li>
-            <li class="nav-list-item">
-                <a href="add-list.html"><i class="fa-solid fa-user-plus"></i> 投稿追加</a>
-            </li>
-
-            <form id="search-all">
-                <input type="search" name="search" id="search-box" placeholder="キーワードを入力" />
-                <input type="submit" name="submit" id="search-submit" value="検索" />
-            </form>
-        </ul>
-    </header>
-    <!-- header終了 -->
-
-    <!-- GoogleMapを挿入 -->
-    <div id="map"></div>
-    <!--  -->
-
-    <!-- 登録フォーム -->
-    <div class="form">
-        <div class="store">店舗名</div>
-        <input type="text" id="storeform" placeholder="店舗名を入力">
-        <div class="address">住所</div>
-        <input type="text" id="addressform" placeholder="店舗の住所を入力">
-        <!-- <div class="category">カテゴリー</div>
-        <input type="text" id="categoryform" placeholder="カテゴリーを入力"> -->
-        <div class="pay">使える電子決済</div>
-        <!-- <input type="text" id="payform" placeholder="使える電子決済を入力"> -->
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="LINE Pay" name="settlement" autocomplete="off" value="LINE Pay">
-            <label class="btn btn-outline-primary" id="LINE" for="LINE Pay">LINE Pay</label>
-
-            <input type="checkbox" class="btn-check" id="PayPay" name="settlement" autocomplete="off" value="PayPay">
-            <label class="btn btn-outline-primary" for="PayPay">PayPay</label>
-
-            <input type="checkbox" class="btn-check" id="楽天 Pay" name="settlement" autocomplete="off" value="楽天 Pay">
-            <label class="btn btn-outline-primary" for="楽天 Pay">楽天 Pay</label>
-
-            <input type="checkbox" class="btn-check" id="Bank Pay" name="settlement" autocomplete="off"
-                value="Bank Pay">
-            <label class="btn btn-outline-primary" for="Bank Pay">Bank Pay</label>
-
-        </div>
-
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="楽天 Edy" name="settlement" autocomplete="off" value="楽天 Edy">
-            <label class="btn btn-outline-primary" for="楽天 Edy">楽天 Edy</label>
-
-            <input type="checkbox" class="btn-check" id="QUICPay" name="settlement" autocomplete="off" value="QUICPay">
-            <label class="btn btn-outline-primary" for="QUICPay">QUICPay</label>
-
-            <input type="checkbox" class="btn-check" id="au Pay" name="settlement" autocomplete="off" value="au Pay">
-            <label class="btn btn-outline-primary" for="au Pay">au Pay</label>
-
-            <input type="checkbox" class="btn-check" id="Origami Pay" name="settlement" autocomplete="off" value="Origami Pay">
-            <label class="btn btn-outline-primary" for="Origami Pay">Origami Pay</label>
-
-        </div>
-
-        <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-            <input type="checkbox" class="btn-check" id="d 払い" name="settlement" autocomplete="off" value="d 払い">
-            <label class="btn btn-outline-primary" for="d 払い">d 払い</label>
-
-            <input type="checkbox" class="btn-check" id="メルペイ" name="settlement" autocomplete="off" value="メルペイ">
-            <label class="btn btn-outline-primary" for="メルペイ">メルペイ</label>
-
-            <input type="checkbox" class="btn-check" id="ゆうちょPay" name="settlement" autocomplete="off" value="ゆうちょPay">
-            <label class="btn btn-outline-primary" for="ゆうちょPay">ゆうちょPay</label>
-
-            <input type="checkbox" class="btn-check" id="QUOカードPay" name="settlement" autocomplete="off" value="QUOカードPay">
-            <label class="btn btn-outline-primary" for="QUOカードPay">QUOカードPay</label>
-
-        </div>
-
-        <input type="submit" id="send" value="送信">
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="message">
+      <h2>Welcome</h2>
+      <h1>Firebase Hosting Setup Complete</h1>
+      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
-    <!---->
+    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <!--footer開始-->
-    <footer>
-        <li id="ul-list-item1">
-            <a href="index.html">
-                <i class="fa-solid fa-house"></i>ホーム</a>
-        </li>
-        <li id="ul-list-item2">
-            <a href="google_maps.html">
-                <i class="fa-solid fa-location-dot"></i> 一覧</a>
-        </li>
-        <li id="ul-list-item3">
-            <a href="add-list.html">
-                <i class="fa-solid fa-user-plus"></i> 投稿追加</a>
-        </li>
-    </footer>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const loadEl = document.querySelector('#load');
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        // firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-    <!--footer終了-->
-
-    <!-- <script src="js/Map_pin.js"></script> -->
-    <script src="./js/Map_pin.js"></script>
-    <script type="module" src="./js/posting_pin.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDJHRdMbXW9csRu2Jg29jz2DEcNESbcGc&language=ja&callback=initMap"></script>
-
-
-</body>
-
+        try {
+          let app = firebase.app();
+          let features = [
+            'auth', 
+            'database', 
+            'firestore',
+            'functions',
+            'messaging', 
+            'storage', 
+            'analytics', 
+            'remoteConfig',
+            'performance',
+          ].filter(feature => typeof app[feature] === 'function');
+          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
 </html>
