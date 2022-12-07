@@ -18,29 +18,41 @@ function initMap() {
 
 function showAddress() {
 
+    console.log("showAddress : 開始");
+
     var query = document.getElementById('storeform').value;
 
     var url = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&results=100&query=" + encodeURI(query) + "&output=json&callback=showResult";
     callJSONP(url);
+
+    console.log("showAddress : 停止");
+
 }
 
 /*------------------------------------------------------------------------------------------------- */
 
 //JSONPを実行する関数
 function callJSONP(url) {
+
+    console.log("callJSONP : 開始");
+
     var target = document.createElement('script');
     target.charset = 'utf-8';
     target.src = url;
     document.body.appendChild(target);
+
+    console.log("callJSONP : 停止");
 }
 
 /*------------------------------------------------------------------------------------------------- */
-
+var count = 0;
 //JSONPの結果として実行される関数
 function showResult(result) {
-
+    console.log("showResult : 開始");
+    count = 0;
     // 取得件数が1件以上の場合
     if (result.ResultInfo.Count > 0) {
+        count = result.ResultInfo.Count;
 
         // 件数の通知
         // alert(result.ResultInfo.Count + "件の結果が見つかりました。");
@@ -67,17 +79,11 @@ function showResult(result) {
                 title: titleInfo,
             });
 
-            var rand = Math.round(Math.random() * 5);
 
-            console.log(rand);
-
-            var randx = rand.toString;
 
             infoWindow[int] = new google.maps.InfoWindow({
 
-                // content: e.latLng.toString() //イベントの発生した位置を toString() で文字列に変換
-
-                // content: '<img src="./../images/image-sample' + rand + '.jpg" width="70" height="70" alt="home" />'
+                content: window.global.content
 
             });
 
@@ -99,11 +105,19 @@ function showResult(result) {
 
         }
 
+        console.log(window.global.content);
+
+        console.log("showResult : 終了");
+
+
     } else {
         alert("検索結果が見つかりませんでした。");
     }
 
+    window.global.content = "";
+    console.log(count);
 }
 
 window.globalFunction = {};
+window.globalFunction.Count = count;
 window.globalFunction.showAddress = showAddress;
