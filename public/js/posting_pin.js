@@ -95,7 +95,7 @@ document.getElementById("send").addEventListener("click", async function () {
   // 全項目を入力しているかを判定
   if (store.value != "" && address.value != "" && pay != "") {
     window.globalFunction.showAddress();
-    // 0.1秒処理を待つ
+    // 0.5秒処理を待つ
     setTimeout(function () {
       SetFirebase();
     }, 500)
