@@ -62,6 +62,9 @@ body {
     padding: 5px 15px;
     margin-top: 15px;
 }
+/* ヘッダー部分 */
+
+
 
 header {
     height: 60px;
@@ -69,6 +72,7 @@ header {
     padding: 15px 0;
     background-color: beige;
     color: black;
+    z-index: 2;
 }
 
 header .headline {
@@ -172,6 +176,10 @@ header#header-all {
     cursor: pointer;
     box-shadow: 1px 1px 5px black;
 }
+
+
+/* ヘッダー部分 */
+
 
 footer {
     display: none;
