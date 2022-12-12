@@ -63,8 +63,6 @@ body {
 }
 /* ヘッダー部分 */
 
-
-
 header {
     height: 60px;
     width: 100%;
@@ -104,7 +102,7 @@ header#header-all {
     position: fixed;
 }
 
-#food-acordion {
+/* #food-acordion {
     display: flex;
 }
 
@@ -112,35 +110,9 @@ header#header-all {
     margin-right: 50px;
     margin-left: 50px;
     margin-top: 20px;
-}
+} */
 
-/*カテゴリ一覧表示*/
-.menu {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-}
 
-.menu>li {
-    display: inline-block;
-    position: fixed;
-    width: 175px;
-}
-
-.menu>li>ul {
-    display: none;
-}
-
-.menu>li:hover ul {
-    display: block;
-    position: absolute;
-    background-color: white;
-    list-style-type: none;
-}
-
-#category-list {
-    border: ridge 2px;
-}
 
 /* 検索レイアウト */
 #search-all {

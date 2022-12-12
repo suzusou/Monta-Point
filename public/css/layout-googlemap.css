@@ -2,155 +2,125 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-html {
-  height: 100%;
+  font-family: "M PLUS Rounded 1c";
 }
 
-body {
-  height: 100%;
+.for-tb {
+  display: none;
 }
 
-/* #map { */
-/* top: 70px; */
-/* height: 93.5%;
+
+#map {
+  /* top: 70px; */
+  height: 93.5%;
   width: 100%;
   margin-top: 60px;
   position: absolute;
   z-index: 10;
-} */
+}
 
-.for-pc {
-  display: block;
-}
-.for-tb {
-  display: none;
-}
-.for-sp {
-  display: none;
-}
-@media screen and (max-width: 1280px) {
-  .for-pc {
-    display: block;
-  }
-  .for-sp {
-    display: none;
-  }
-  #map {
-    /* top: 70px; */
-    height: 93.5%;
-    width: 100%;
-    margin-top: 60px;
-    position: absolute;
-    z-index: 10;
-  }
-  header {
-    height: 60px;
-    width: 100%;
-    padding: 15px 0;
-    background-color: aqua;
-    /* color: black; */
-    /* position: fixed; */
-  }
+/* ヘッダー部分 */
 
-  header .headline {
-    line-height: 40px;
-    /* float: left; */
-    font-size: 30px;
-    margin-left: 20px;
-    position: fixed;
-  }
-  .nav-list {
-    /* line-height: 0px; */
-    /* float: left; */
-    margin-left: 170px;
-    font-size: 22px;
-    list-style: none;
-    /* position: fixed; */
-  }
-  .nav-list-item {
-    list-style: none;
-    display: inline-block;
-    margin-left: 25px;
-    /* position: fixed; */
-  }
-
-  .nav-list > a {
-    text-decoration: none;
-  }
-  header#header-all {
-    position: fixed;
-  }
-  #food-acordion {
-    display: flex;
-    /* margin-left: 100px; */
-  }
-  #food-child {
-    margin-right: 50px;
-    margin-left: 50px;
-    margin-top: 20px;
-    /* margin-bottom: 20px; */
-  }
-  /*カテゴリ一覧表示*/
-  .menu {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .menu > li {
-    display: inline-block;
-    position: fixed;
-    width: 175px;
-  }
-  .menu > li > ul {
-    display: none;
-  }
-  .menu > li:hover ul {
-    display: block;
-    position: absolute;
-    background-color: white;
-    list-style-type: none;
-  }
-  #category-list {
-    border: ridge 2px;
-  }
-  /* 検索レイアウト */
-  #search-all {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-    outline: 0;
-  }
-  #search-box {
-    position: absolute;
-    right: 100px;
-    width: 225px;
-    height: 40px;
-    border-radius: 10px;
-    top: 9px;
-  }
-  #search-submit {
-    position: absolute;
-    right: 40px;
-    width: 50px;
-    height: 40px;
-    top: 9px;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: blue;
-  }
+header {
+  height: 60px;
+  width: 100%;
+  padding: 15px 0;
+  background-color: beige;
+  color: black;
+  z-index: 2;
 }
+
+header .headline {
+  line-height: 30px;
+  font-size: 30px;
+  font-weight: 900;
+  margin-left: 20px;
+  position: fixed;
+}
+
+.nav-list {
+  margin-left: 201px;
+  font-size: 22px;
+  list-style: none;
+}
+
+.nav-list-item {
+  list-style: none;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+.nav-list-item>a {
+  text-decoration: none;
+  color: black;
+}
+
+header#header-all {
+  position: fixed;
+}
+
+#food-acordion {
+  display: flex;
+}
+
+#food-child {
+  margin-right: 50px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+
+/* 検索レイアウト */
+#search-all {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: top;
+  outline: 0;
+}
+
+#search-box {
+  position: absolute;
+  right: 90px;
+  width: 225px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 15px;
+  padding-left: 5px;
+  border: 2px solid #ddd;
+  top: 9px;
+  outline: none;
+}
+
+#search-submit {
+  position: absolute;
+  border: none;
+  top: 10px;
+  right: 6px;
+  font-size: 22px;
+  padding: 2px 15px;
+  background-color: lightseagreen;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 1px 1px 5px black;
+}
+
+
+/* ヘッダー部分 */
+
 
 @media screen and (max-width: 960px) {
-  .for-pc {
-    display: none;
-  }
+  
+
   .for-tb {
     display: block;
   }
-  .for-sp {
+
+
+  #header-all{
     display: none;
   }
+
   #map {
     /* top: 70px; */
     width: 100%;
@@ -160,159 +130,98 @@ body {
     z-index: 10;
     /* margin-bottom: 8%; */
   }
+
   /*footerレイアウト開始*/
   footer {
     /*footerの装飾*/
-    width: 100%;
-    height: 8%;
+    display: flex;
     justify-content: space-around;
+    width: 100%;
+    height: 6.5vh;
     background-color: #89c7de;
-    color: #fff;
-    /* text-align: center; */
-    /* padding: 30px; */
-    position: fixed; /*←絶対位置*/
-    bottom: 0; /*下に固定*/
-    z-index: 20;
+    position: fixed;
+    /*←絶対位置*/
+    bottom: 0;
+    /*下に固定*/
+    z-index: 2;
+    /* 上にくるようにする */
   }
+
   #ul-list-item1 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 13%;
-    /* margin-right: 5vw; */
-    margin-top: 3%;
-    font-size: 1.5em;
+    width: 31vw;
+    height: 4vh;
+    margin-left: 12vw;
+    margin-top: 10px;
+    list-style: none;
   }
+
+  #ul-list-item1>a {
+    text-decoration: none;
+    color: black;
+  }
+
   #ul-list-item2 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 45%;
-    /* margin-right: 20vw; */
-    margin-top: 3%;
-    font-size: 1.5em;
+    width: 31vw;
+    height: 4vh;
+    margin-top: 10px;
+    list-style: none;
   }
+
+  #ul-list-item2>a {
+    text-decoration: none;
+    color: black;
+  }
+
   #ul-list-item3 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 70%;
-    /* margin-right: 10vw; */
-    margin-top: 3%;
-    font-size: 1.5em;
+    width: 31vw;
+    height: 4vh;
+    margin-top: 10px;
+    list-style: none;
   }
+
+  #ul-list-item3>a {
+    text-decoration: none;
+    color: black;
+  }
+
   /*footerレイアウト終了*/
+
 
   /* 検索レイアウト */
   #search-all {
     list-style-type: none;
     display: inline-block;
-    vertical-align: top;
+    /* vertical-align: top; */
     outline: 0;
   }
-  #search-box {
-    position: absolute;
-    right: 20%;
-    width: 27%;
-    height: 5%;
-    border-radius: 10px;
-    top: 9px;
-    position: fixed; /*←絶対位置*/
-    z-index: 10;
-  }
-  #search-submit {
-    position: absolute;
-    right: 10%;
-    width: 9%;
-    height: 5%;
-    top: 9px;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: blue;
-    position: fixed; /*←絶対位置*/
-    z-index: 10;
-  }
-}
-@media screen and (max-width: 520px) {
-  .for-pc {
-    display: none;
-  }
-  .for-tb {
-    display: none;
-  }
-  .for-sp {
-    display: block;
-  }
-  #map {
-    /* top: 70px; */
-    width: 100%;
-    height: 93.5%;
-    margin-top: 0px;
-    position: absolute;
-    z-index: 10;
-    /* margin-bottom: 6.5%; */
-  }
-  /*footerレイアウト開始*/
-  footer {
-    /*footerの装飾*/
-    width: 100%;
-    height: 6.5%;
-    justify-content: space-around;
-    background-color: #89c7de;
-    color: #fff;
-    /* text-align: center; */
-    /* padding: 30px; */
-    position: fixed; /*←絶対位置*/
-    bottom: 0; /*下に固定*/
-  }
-  #ul-list-item1 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 6%;
-    /* margin-right: 5vw; */
-    margin-top: 3.25%;
-    font-size: 1.2em;
-  }
-  #ul-list-item2 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 40%;
-    /* margin-right: 20vw; */
-    margin-top: 3.25%;
-    font-size: 1.2em;
-  }
-  #ul-list-item3 {
-    display: inline-block;
-    position: fixed;
-    margin-left: 68%;
-    /* margin-right: 10vw; */
-    margin-top: 3.25%;
-    font-size: 1.2em;
-  }
-  /*footerレイアウト終了*/
 
-  /* 検索レイアウト */
-  #search-all {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-    outline: 0;
-  }
   #search-box {
     position: absolute;
-    right: 40%;
-    width: 45%;
-    height: 6%;
+    right: 90px;
+    width: 225px;
+    height: 40px;
     border-radius: 10px;
+    font-size: 15px;
+    padding-left: 5px;
+    border: 2px solid #ddd;
     top: 9px;
-    position: fixed; /*←絶対位置*/
+    outline: none;
+    z-index: 10;
   }
+
   #search-submit {
     position: absolute;
-    right: 18%;
-    width: 20%;
-    height: 6%;
-    top: 9px;
-    font-weight: bold;
+    border: none;
+    top: 10px;
+    right: 6px;
+    font-size: 22px;
+    padding: 2px 15px;
+    background-color: lightseagreen;
     border-radius: 10px;
-    background-color: blue;
-    position: fixed; /*←絶対位置*/
+    color: white;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px black;
+    z-index: 10;
   }
 }
+
