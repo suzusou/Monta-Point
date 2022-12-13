@@ -32,7 +32,7 @@
                 <a href="posting.html"><i class="fa-solid fa-user-plus"></i> 投稿追加</a>
             </li>
 
-            <form id="search-all">
+            <form id="search-all" action="" onsubmit="return func1()">
                 <input type="search" name="search" id="search-box" placeholder="キーワードを入力" />
                 <input type="submit" name="submit" id="search-submit" value="検索" />
             </form>
@@ -128,6 +128,12 @@
 
     <script src="./js/Map_pin.js"></script>
     <script type="module" src="./js/posting_pin.js"></script>
+    <script language="javascript" type="text/javascript">
+        const func1 = () => {
+          // actionで指定した先に遷移させない
+          return false;
+        }
+      </script>
 
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDJHRdMbXW9csRu2Jg29jz2DEcNESbcGc&language=ja&callback=initMap"></script>
 
