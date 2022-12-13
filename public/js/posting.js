@@ -87,8 +87,6 @@ document.getElementById("send").addEventListener("click", async function () {
     }
   }
 
-  // 画像のパスの確認をする
-  console.log(content);
   // 最後の一文字を消去
   pay = payStr.slice(0, -1);
 
