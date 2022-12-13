@@ -48,74 +48,77 @@ function callJSONP(url) {
 var count = 0;
 //JSONPの結果として実行される関数
 function showResult(result) {
-    console.log("showResult : 開始");
-    count = 0;
-    // 取得件数が1件以上の場合
-    if (result.ResultInfo.Count > 0) {
-        count = result.ResultInfo.Count;
+    
+        
 
-        // 件数の通知
-        // alert(result.ResultInfo.Count + "件の結果が見つかりました。");
-        console.log(result.ResultInfo.Count + "件の結果が見つかりました。");
+        console.log("showResult : 開始");
+        count = 0;
+        // 取得件数が1件以上の場合
+        if (result.ResultInfo.Count > 0) {
+            count = result.ResultInfo.Count;
+            
+            // 件数の通知
+            // alert(result.ResultInfo.Count + "件の結果が見つかりました。");
+            console.log(result.ResultInfo.Count + "件の結果が見つかりました。");
 
-        // マーカーの配列の宣言。　取得件数分行う
-        var marker = [result.ResultInfo.Count];
+            // マーカーの配列の宣言。　取得件数分行う
+            var marker = [result.ResultInfo.Count];
 
-        // infwindowの配列の宣言。　取得件数分行う
-        var infoWindow = [result.ResultInfo.Count];
+            // infwindowの配列の宣言。　取得件数分行う
+            var infoWindow = [result.ResultInfo.Count];
 
-        // for文で取得件数分繰り返す
-        for (let int = 0; int < result.ResultInfo.Count; int++) {
+            // for文で取得件数分繰り返す
+            for (let int = 0; int < result.ResultInfo.Count; int++) {
 
-            var titleInfo = result.Feature[int].Name + "　：　" + result.Feature[int].Property.Address;
+                var titleInfo = result.Feature[int].Name + "　：　" + result.Feature[int].Property.Address;
 
-            var splitLatLng = result.Feature[int].Geometry.Coordinates.split(',');
+                var splitLatLng = result.Feature[int].Geometry.Coordinates.split(',');
 
-            YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
+                YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
 
-            marker[int] = new google.maps.Marker({
-                map: map,           //表示している地図を指定する
-                position: YahooLatLng, //マーカーの表示位置を設定する
-                title: titleInfo,
-            });
+                marker[int] = new google.maps.Marker({
+                    map: map,           //表示している地図を指定する
+                    position: YahooLatLng, //マーカーの表示位置を設定する
+                    title: titleInfo,
+                });
 
 
 
-            infoWindow[int] = new google.maps.InfoWindow({
+                infoWindow[int] = new google.maps.InfoWindow({
 
-                content: window.global.content
+                    content: window.global.content
 
-            });
+                });
 
-            marker[int].addListener('mouseover', function (e) {
+                marker[int].addListener('mouseover', function (e) {
 
-                // console.log(marker[int].title);
-                infoWindow[int].open(map, marker[int]);
+                    // console.log(marker[int].title);
+                    infoWindow[int].open(map, marker[int]);
 
-            });
+                });
 
-            marker[int].addListener('mouseout', function (e) {
+                marker[int].addListener('mouseout', function (e) {
 
-                // console.log(marker[int].title);
-                infoWindow[int].close(map, marker[int]);
+                    // console.log(marker[int].title);
+                    infoWindow[int].close(map, marker[int]);
 
-            });
+                });
 
-            console.log(result.Feature[int].Name);
+                console.log(result.Feature[int].Name);
 
+            }
+
+            console.log(window.global.content);
+
+
+        } else {
+            alert("検索結果が見つかりませんでした。");
         }
 
-        console.log(window.global.content);
-
+        window.global.content = "";
+        console.log(count);
         console.log("showResult : 終了");
-
-
-    } else {
-        alert("検索結果が見つかりませんでした。");
-    }
-
-    window.global.content = "";
-    console.log(count);
+    
 }
 
 window.globalFunction = {};

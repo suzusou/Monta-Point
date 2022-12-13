@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <title>google_map</title>
+    <script src="./js/google_maps.js"></script>
+    <script
+      src="https://kit.fontawesome.com/9cb34e4153.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
+    <link rel="stylesheet" href="./css/layout-googlemap.css" />
+    <!-- <link rel="stylesheet" href="./Google-Maps.css" /> -->
+  </head>
+  <body>
+    <!--PC画面-->
+    
+      <!-- header -->
+      <header id="header-all">
+        <div class="headline">
+          <a>決済先生</a>
+        </div>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="index.html"> <i class="fa-solid fa-house"></i> ホーム</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="google_maps.html"
+              ><i class="fa-solid fa-location-dot"></i> 一覧</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="posting.html"><i class="fa-solid fa-user-plus"></i> 投稿追加</a>
+          </li>
+        </ul>
+        <form id="search-all">
+          <input
+            type="search"
+            name="search"
+            id="search-box"
+            placeholder="キーワードを入力"
+          />
+          <input type="submit" name="submit" id="search-submit" value="検索" />
+        </form>
+      </header>
+    
+      <!-- ---------------------------------------------------------------------------------------------- -->
+
+      
+    
+    <div id="map"></div>
+
+    <!--960px画面-->
+    <div class="for-tb">
+      <!--footer開始-->
+    <footer>
+      <li id="ul-list-item1">
+          <a href="index.html">
+              <i class="fa-solid fa-house"></i>ホーム</a>
+      </li>
+      <li id="ul-list-item2">
+          <a href="google_maps.html">
+              <i class="fa-solid fa-location-dot"></i> 一覧</a>
+      </li>
+      <li id="ul-list-item3">
+          <a href="posting.html">
+              <i class="fa-solid fa-user-plus"></i> 投稿追加</a>
+      </li>
+  </footer>
+
+  <!--footer終了-->
+
+      <form id="search-all">
+        <input
+          type="search"
+          name="search"
+          id="search-box"
+          placeholder="キーワードを入力"
+        />
+        <input type="submit" name="submit" id="search-submit" value="検索" />
+      </form>
+      <!-- ---------------------------------------------------------------------------------------------- -->
+    </div>
+
+    
+      <!-- ---------------------------------------------------------------------------------------------- -->
+
+      <!-- APIキーを設定する -->
+      <!-- language=jaで日本語表示の地図を表示する -->
+      <!-- callback=initMapでinitMapメソッドを呼び出す -->
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDJHRdMbXW9csRu2Jg29jz2DEcNESbcGc&language=ja&callback=initMap"></script>
+
+      <!-- ---------------------------------------------------------------------------------------------- -->
+    
+  </body>
+</html>
