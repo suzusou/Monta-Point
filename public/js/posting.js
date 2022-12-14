@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { doc, setDoc, getFirestore, collection, onSnapshot, getDocs } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { doc,getFirestore,updateDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // MontaPointのFirebaseの情報
 const firebaseConfig = {
@@ -25,6 +25,9 @@ var address = document.getElementById("addressform");
 var settlement = document.getElementsByName("settlement");
 var payStr = "";
 var pay = "";
+var str = "";
+var str1 = "";
+var str2 = "";
 var img = [];
 var content = "";
 
@@ -93,6 +96,23 @@ document.getElementById("send").addEventListener("click", async function () {
   // 全項目を入力しているかを判定
   if (store.value != "" && address.value != "" && pay != "") {
     window.globalFunction.showAddress();
+    // 正規表現の処理
+    str = address.value.replace(/(.*[県郡])(.*[市町村]).*/, '$2');
+    if (str == "名古屋市") {
+      str1 = address.value.replace(/(.*[市町村])(.*区).*/, '$2');
+      // 区があったら
+      if (str1 != address.value) {
+        str2 = str + str1;
+      } else {
+        str2 = str;
+      }
+    } else if (str == "名古屋市中村") {
+      str2 = str + "区";
+    } else {
+      str2 = str;
+    }
+    console.log(str);
+    console.log(str2);
     // 0.5秒処理を待つ
     setTimeout(function () {
       SetFirebase();
@@ -103,15 +123,14 @@ document.getElementById("send").addEventListener("click", async function () {
   img = [];
 
   async function SetFirebase() {
-    
+
     // 検索結果が見つかったら
     if (count > 0) {
-      console.log("検索結果が見つかった"+ count);
+      console.log("検索結果が見つかった" + count);
       // Firestoreに書き込む
       try {
-        await setDoc(doc(db, "決済先生sample", store.value), {
-          address: address.value,
-          pay: pay
+        await updateDoc(doc(db, "決済先生sample", str2), {
+          [store.value]: pay
         });
         console.log("登録完了しました。");
         alert("登録完了しました。");
@@ -137,6 +156,10 @@ document.getElementById("send").addEventListener("click", async function () {
     // payStrとpayを初期化する
     payStr = "";
     pay = "";
+
+    str="";
+    str1="";
+    str2="";
   }
 });
 
