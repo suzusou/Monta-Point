@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { doc,getFirestore,updateDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { doc, getFirestore, updateDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // MontaPointのFirebaseの情報
 const firebaseConfig = {
@@ -20,9 +20,9 @@ const db = getFirestore(app);
 // 各要素の取得
 var store = document.getElementById("storeform");
 var address = document.getElementById("addressform");
-// var category = document.getElementById("categoryform");
-// var pay = document.getElementById("payform");
 var settlement = document.getElementsByName("settlement");
+
+// 変数、配列の宣言
 var payStr = "";
 var pay = "";
 var str = "";
@@ -41,6 +41,9 @@ document.getElementById("send").addEventListener("click", async function () {
       img.push(settlement[i].value);
     }
   }
+
+   // 最後の一文字を消去
+   pay = payStr.slice(0, -1);
 
   // 何が押されたかをコンソールに出す
   console.log(img);
@@ -90,13 +93,12 @@ document.getElementById("send").addEventListener("click", async function () {
     }
   }
 
-  // 最後の一文字を消去
-  pay = payStr.slice(0, -1);
-
   // 全項目を入力しているかを判定
   if (store.value != "" && address.value != "" && pay != "") {
+    // Yahoo!リバースジオコーダAPI
     window.globalFunction.showAddress();
-    // 正規表現の処理
+
+    // Firebaseの登録するときに必要な市を取得するための正規表現の処理
     str = address.value.replace(/(.*[県郡])(.*[市町村]).*/, '$2');
     if (str == "名古屋市") {
       str1 = address.value.replace(/(.*[市町村])(.*区).*/, '$2');
@@ -113,11 +115,12 @@ document.getElementById("send").addEventListener("click", async function () {
     }
     console.log(str);
     console.log(str2);
+
     // 0.5秒処理を待つ
     setTimeout(function () {
+      // Firebaseの登録処理をする
       SetFirebase();
     }, 500)
-
   }
   // imgを初期化する
   img = [];
@@ -137,31 +140,36 @@ document.getElementById("send").addEventListener("click", async function () {
       } catch (e) {
         console.log(e);
       }
-
-
-      // リアルタイムの更新を取得する
-      // const unsub = onSnapshot(doc(db, "決済先生sample", store.value), (doc) => {
-      //   console.log("store data: ", doc.id);
-      //   console.log("address data: ", doc.data().address);
-      //   console.log("pay data: ", doc.data().pay);
-      //　GoogleMapのPINを立てる処理
-
-
-
-      // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
-      // });
     } else {
-      console.log("posting_pin.js:件数" + count);
+      console.log("検索結果が見つからなかった" + count);
+      // Firestoreに書き込む
+      try {
+        await setDoc(doc(db, "決済先生 住所登録", store.value), {
+          address: address.value,
+          pay: pay
+        });
+        console.log("登録完了しました。");
+        alert("登録完了しました。");
+      } catch (e) {
+        console.log(e);
+      }
     }
-    // payStrとpayを初期化する
+    // 各変数のを初期化する
     payStr = "";
     pay = "";
-
-    str="";
-    str1="";
-    str2="";
+    str = "";
+    str1 = "";
+    str2 = "";
   }
 });
+
+
+// リアルタイムの更新を取得する
+// const unsub = onSnapshot(doc(db, "決済先生sample", store.value), (doc) => {
+//   console.log("store data: ", doc.id);
+//   console.log("address data: ", doc.data().address);
+//   console.log("pay data: ", doc.data().pay);
+// });
 
 
 // 全ての情報を取得
