@@ -9,7 +9,9 @@
   display: none;
 }
 
-
+#sample{
+  z-index: 100;
+}
 #map {
   /* top: 70px; */
   height: 93.5%;

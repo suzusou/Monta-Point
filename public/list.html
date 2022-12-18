@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>google_map</title>
+  <title>決済先生　一覧</title>
   <script src="https://kit.fontawesome.com/9cb34e4153.js" crossorigin="anonymous"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
@@ -15,6 +15,7 @@
 
   <!-- header -->
   <header id="header-all">
+    <!-- <input type="submit" id="sample" value="送信"> -->
     <div class="headline">
       <a>決済先生</a>
     </div>
@@ -29,6 +30,7 @@
         <a href="posting.html"><i class="fa-solid fa-user-plus"></i> 投稿追加</a>
       </li>
     </ul>
+    
     <form id="search-all" action="" onsubmit="return func1()">
       <input type="search" name="search" id="search-box" placeholder="キーワードを入力" />
       <input type="submit" name="submit" id="search-submit" value="検索" />
@@ -38,8 +40,10 @@
   <!-- ---------------------------------------------------------------------------------------------- -->
 
 
+  
 
   <div id="map"></div>
+
 
   <!--960px画面-->
   <div class="for-tb">
@@ -74,7 +78,7 @@
   <!-- APIキーを設定する -->
   <!-- language=jaで日本語表示の地図を表示する -->
   <!-- callback=initMapでinitMapメソッドを呼び出す -->
-  <script src="./js/Map_pin.js"></script>
+  <script src="./js/Geocode.js"></script>
   <script type="module" src="./js/list.js"></script>
   <script language="javascript" type="text/javascript">
     const func1 = () => {

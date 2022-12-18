@@ -68,15 +68,15 @@ function showResult(result) {
             var infoWindow = [result.ResultInfo.Count];
 
             // for文で取得件数分繰り返す
-            for (let int = 0; int < result.ResultInfo.Count; int++) {
+            for (let i = 0; i < result.ResultInfo.Count; i++) {
 
-                var titleInfo = result.Feature[int].Name + "　：　" + result.Feature[int].Property.Address;
+                var titleInfo = result.Feature[i].Name + "　：　" + result.Feature[i].Property.Address;
 
-                var splitLatLng = result.Feature[int].Geometry.Coordinates.split(',');
+                var splitLatLng = result.Feature[i].Geometry.Coordinates.split(',');
 
                 YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
 
-                marker[int] = new google.maps.Marker({
+                marker[i] = new google.maps.Marker({
                     map: map,           //表示している地図を指定する
                     position: YahooLatLng, //マーカーの表示位置を設定する
                     title: titleInfo,
@@ -84,27 +84,27 @@ function showResult(result) {
 
 
 
-                infoWindow[int] = new google.maps.InfoWindow({
+                infoWindow[i] = new google.maps.InfoWindow({
 
                     content: window.global.content
 
                 });
 
-                marker[int].addListener('mouseover', function (e) {
+                marker[i].addListener('mouseover', function (e) {
 
                     // console.log(marker[int].title);
-                    infoWindow[int].open(map, marker[int]);
+                    infoWindow[i].open(map, marker[i]);
 
                 });
 
-                marker[int].addListener('mouseout', function (e) {
+                marker[i].addListener('mouseout', function (e) {
 
                     // console.log(marker[int].title);
-                    infoWindow[int].close(map, marker[int]);
+                    infoWindow[i].close(map, marker[i]);
 
                 });
 
-                console.log(result.Feature[int].Name);
+                console.log(result.Feature[i].Name);
 
             }
 
