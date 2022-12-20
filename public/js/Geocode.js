@@ -18,8 +18,11 @@ function initMap() {
 
 //住所を表示する
 function showAddress() {
+  if(window.globalData.count == 0){
+  console.time("count")
+  }
 
-  var url = "https://map.yahooapis.jp/geocode/V1/geoCoderV1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(window.globalData.addressData[window.globalData.count]) + "&output=json&callback=showResult";
+  var url = "https://map.yahooapis.jp/geocode/V1/geoCoderV1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(window.globalData.addressData[window.globalData.count]) + "&output=json&callback=showResult&" + window.globalData.count;
   callJSONP(url);
 
 }
@@ -36,16 +39,16 @@ function callJSONP(url) {
 
 //JSONPの結果として実行される関数
 function showResult(result) {
-
+  
   if (result.ResultInfo.Count > 0) {
-
+    console.log(result)
+    
     var splitLatLng = result.Feature[0].Geometry.Coordinates.split(',');
-
     var realLat = splitLatLng[1] + "," + splitLatLng[0];
 
-    alert(result.ResultInfo.Count + "件の結果が見つかりました。\n" +
-      result.Feature[0].Name + "の座標は" + realLat + "です。" + splitLatLng[2]);
-    console.log(window.globalData.payData[window.globalData.count]);
+    // alert(result.ResultInfo.Count + "件の結果が見つかりました。\n" +
+    //   result.Feature[0].Name + "の座標は" + realLat + "です。" + splitLatLng[2]);
+    // console.log(window.globalData.payData[window.globalData.count]);
     var paySplit = window.globalData.payData[window.globalData.count].split(',');
     console.log(paySplit);
     var content = "";
@@ -132,5 +135,14 @@ function showResult(result) {
     alert("検索結果が見つかりませんでした。");
 
   }
+
+ 
+    if (window.globalData.count < window.globalData.addressData.length - 1) {
+      window.globalData.count++;
+      showAddress();
+      console.log(window.globalData.count);
+    }else{
+      console.timeEnd("count");
+    }
 }
 

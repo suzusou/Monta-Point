@@ -45,14 +45,16 @@ window.onload = async function () {
   //   console.log(count);
 
   // }, 1000)
-  var tid = setInterval(function () {
+
+  // var tid = setInterval(function () {
     window.globalData.count++;
     showAddress();
     console.log(window.globalData.count);
-    if (window.globalData.count >= addressData.length - 1) {
-      clearInterval(tid);
-    }
-  }, 1000)
+  //   if (window.globalData.count >= addressData.length - 1) {
+  //     clearInterval(tid);
+  //   }
+  // }, 1000)
+
   // setPin();
 }
 
