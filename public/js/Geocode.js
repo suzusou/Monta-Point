@@ -7,7 +7,7 @@ function initMap() {
 
   var options = {
     zoom: 8,       //地図の縮尺値を設定する
-    center: latLng   //地図の中心座標を設定する
+    center: latLng,  //地図の中心座標を設定する
   };
 
   map = new google.maps.Map(document.getElementById('map'), options);
@@ -159,7 +159,7 @@ function showAddress2() {
 
   var query2 = window.globalData.localSerch_store[count_localserch];
 
- 
+
 
   var url2 = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query2) + "&output=json&callback=showResult2&results=1&ac=23";
   callJSONP2(url2);
@@ -172,8 +172,14 @@ function callJSONP2(url2) {
   var target2 = document.createElement('script');
   target2.charset = 'utf-8';
   target2.src = url2;
+  target2.id = 'pin';
   document.body.appendChild(target2);
-
+  if (count_localserch % 100 == 0 && count_localserch != 0) {
+    console.log("削除します");
+    for (let a = 0; a < 100; a++) {
+      document.getElementById('pin').remove();
+    }
+  }
 }
 
 //JSONPの結果として実行される関数
@@ -194,7 +200,7 @@ function showResult2(result2) {
     });
 
     var paySplit2 = window.globalData.localSerch_pay[count_localserch].split(',');
-   
+
     var content2 = "";
 
     for (var i = 0; i < paySplit2.length; i++) {
@@ -264,12 +270,13 @@ function showResult2(result2) {
   } else {
 
     miss_localserch.push(window.globalData.localSerch_store[count_localserch]);
+    console.log(window.globalData.localSerch_store[count_localserch] + " :" + count_localserch);
 
   }
 
   // if (count_localserch < window.globalData.localSerch_store.length - 1) {
-    if (count_localserch < 1000) {
 
+  if (count_localserch < 50) {
     count_localserch++;
 
     showAddress2();
@@ -281,3 +288,63 @@ function showResult2(result2) {
   }
 
 }
+
+function showAddress3() {
+
+  var query3 = document.getElementById('search-box').value;
+
+  var url3 = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&results=100&query=" + encodeURI(query3) + "&output=json&callback=showResult3";
+  callJSONP(url3);
+
+}
+
+//JSONPを実行する関数
+function callJSONP3(url3) {
+
+  var target3 = document.createElement('script');
+  target3.charset = 'utf-8';
+  target3.src = url3;
+  document.body.appendChild(target3);
+
+}
+
+function showResult3(result3) {
+  // 取得件数が1件以上の場合
+  if (result3.ResultInfo.Count > 0) {
+    alert("検索できました。");
+
+    var splitLatLng3 = result3.Feature[0].Geometry.Coordinates.split(',');
+
+    console.log(Number(splitLatLng3[1]));
+
+    // YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[1]));
+
+    var latLngBounds = new google.maps.LatLngBounds(
+      new google.maps.LatLng(Number(splitLatLng3[1]) - 0.01, Number(splitLatLng3[0]) - 0.01),
+      new google.maps.LatLng(Number(splitLatLng3[1]) + 0.01, Number(splitLatLng3[0]) + 0.01)
+    );
+
+    // var mapDiv = document.getElementById( 'map' ) ;
+    // var map = new google.maps.Map( mapDiv, {
+    //   zoom: 11 
+    // } ) 
+
+    console.log(latLngBounds);
+
+    // fit bounds
+    map.fitBounds(latLngBounds);
+
+  } else {
+    alert("検索結果が見つかりませんでした。");
+  }
+}
+
+
+var sub = document.getElementsByClassName('search-submit');
+var sub2 = Array.from(sub);
+
+sub2.forEach(function (sub3) {
+  sub3.addEventListener("click", function () {
+    showAddress3();
+  });
+})
