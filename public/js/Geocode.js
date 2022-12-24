@@ -18,14 +18,11 @@ function initMap() {
 
 //住所を表示する
 function showAddress() {
-  if (window.globalData.count == 0) {
-    console.time("count")
-  }
-
+  // if (window.globalData.count == 0) {
+  //   console.time("count")
+  // }
   var url = "https://map.yahooapis.jp/geocode/V1/geoCoderV1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(window.globalData.addressData[window.globalData.count]) + "&output=json&callback=showResult";
   callJSONP(url);
-
-
 }
 
 //JSONPを実行する関数
@@ -150,46 +147,45 @@ function showResult(result) {
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 以下ローカルサーチ
 
-var count_localserch = 0;
+var count_localSearch = 0;
 
-var miss_localserch = [];
+var miss_localSearch = [];
 
 //住所を表示する
-function showAddress2() {
+function showAddress_localSearch() {
 
-  var query2 = window.globalData.localSerch_store[count_localserch];
-
-
-
-  var url2 = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query2) + "&output=json&callback=showResult2&results=1&ac=23";
-  callJSONP2(url2);
+  var query_localSearch = window.globalData.localSearch_store[count_localSearch];
+  var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&output=json&callback=showResult_localSearch&results=1&ac=23";
+  callJSONP_localSearch(url_localSearch);
 
 }
 
 //JSONPを実行する関数
-function callJSONP2(url2) {
+function callJSONP_localSearch(url_localSearch) {
 
-  var target2 = document.createElement('script');
-  target2.charset = 'utf-8';
-  target2.src = url2;
-  target2.id = 'pin';
-  document.body.appendChild(target2);
-  if (count_localserch % 100 == 0 && count_localserch != 0) {
+  var target_localSearch = document.createElement('script');
+  target_localSearch.charset = 'utf-8';
+  target_localSearch.src = url_localSearch;
+  target_localSearch.id = 'pin';
+  document.body.appendChild(target_localSearch);
+  // scriptタグをたまりすぎるのを防ぐ
+  if (count_localSearch % 100 == 0 && count_localSearch != 0) {
     console.log("削除します");
     for (let a = 0; a < 100; a++) {
       document.getElementById('pin').remove();
     }
   }
+
 }
 
 //JSONPの結果として実行される関数
-function showResult2(result2) {
+function showResult_localSearch(result) {
 
-  if (result2.ResultInfo.Count > 0) {
+  if (result.ResultInfo.Count > 0) {
 
-    var titleInfo2 = result2.Feature[0].Name + "　：　" + result2.Feature[0].Property.Address;
+    var titleInfo2 = result.Feature[0].Name + "　：　" + result.Feature[0].Property.Address;
 
-    var splitLatLng2 = result2.Feature[0].Geometry.Coordinates.split(',');
+    var splitLatLng2 = result.Feature[0].Geometry.Coordinates.split(',');
 
     LatLang2 = new google.maps.LatLng(Number(splitLatLng2[1]), Number(splitLatLng2[0]));
 
@@ -199,7 +195,7 @@ function showResult2(result2) {
       title: titleInfo2,
     });
 
-    var paySplit2 = window.globalData.localSerch_pay[count_localserch].split(',');
+    var paySplit2 = window.globalData.localSearch_pay[count_localSearch].split(',');
 
     var content2 = "";
 
@@ -269,69 +265,63 @@ function showResult2(result2) {
 
   } else {
 
-    miss_localserch.push(window.globalData.localSerch_store[count_localserch]);
-    console.log(window.globalData.localSerch_store[count_localserch] + " :" + count_localserch);
+    miss_localSearch.push(window.globalData.localSearch_store[count_localSearch]);
+    console.log(window.globalData.localSearch_store[count_localSearch] + " :" + count_localSearch);
 
   }
 
-  // if (count_localserch < window.globalData.localSerch_store.length - 1) {
+  // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
 
-  if (count_localserch < 50) {
-    count_localserch++;
+  if (count_localSearch < 50) {
+    count_localSearch++;
 
-    showAddress2();
+    showAddress_localSearch();
 
   } else {
 
-    console.log("検索に引っかからなかったのは　:　" + miss_localserch)
+    console.log("検索に引っかからなかったのは　:　" + miss_localSearch)
 
   }
 
 }
 
-function showAddress3() {
+// 検索機能　↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
+function showAddressZoom() {
 
-  var query3 = document.getElementById('search-box').value;
+  var querySearch = document.getElementById('search-box').value;
 
-  var url3 = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&results=100&query=" + encodeURI(query3) + "&output=json&callback=showResult3";
-  callJSONP(url3);
+  var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(querySearch) + "&output=json&callback=execFitBounds&results=1&ac=23";
+  callJSONP_Search(urlSearch);
 
 }
 
 //JSONPを実行する関数
-function callJSONP3(url3) {
+function callJSONP_Search(urlSearch) {
 
-  var target3 = document.createElement('script');
-  target3.charset = 'utf-8';
-  target3.src = url3;
-  document.body.appendChild(target3);
+  var targetSearch = document.createElement('script');
+  targetSearch.charset = 'utf-8';
+  targetSearch.src = urlSearch;
+  document.body.appendChild(targetSearch);
 
 }
 
-function showResult3(result3) {
+function execFitBounds(result) {
   // 取得件数が1件以上の場合
-  if (result3.ResultInfo.Count > 0) {
+  if (result.ResultInfo.Count > 0) {
     alert("検索できました。");
 
-    var splitLatLng3 = result3.Feature[0].Geometry.Coordinates.split(',');
+    var splitLatLng_Search = result.Feature[0].Geometry.Coordinates.split(',');
 
-    console.log(Number(splitLatLng3[1]));
+    console.log(Number(splitLatLng_Search[1]));
 
-    // YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[1]));
 
     var latLngBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(Number(splitLatLng3[1]) - 0.01, Number(splitLatLng3[0]) - 0.01),
-      new google.maps.LatLng(Number(splitLatLng3[1]) + 0.01, Number(splitLatLng3[0]) + 0.01)
+      new google.maps.LatLng(Number(splitLatLng_Search[1]) - 0.01, Number(splitLatLng_Search[0]) - 0.01),
+      new google.maps.LatLng(Number(splitLatLng_Search[1]) + 0.01, Number(splitLatLng_Search[0]) + 0.01)
     );
-
-    // var mapDiv = document.getElementById( 'map' ) ;
-    // var map = new google.maps.Map( mapDiv, {
-    //   zoom: 11 
-    // } ) 
 
     console.log(latLngBounds);
 
-    // fit bounds
     map.fitBounds(latLngBounds);
 
   } else {
@@ -340,11 +330,12 @@ function showResult3(result3) {
 }
 
 
-var sub = document.getElementsByClassName('search-submit');
-var sub2 = Array.from(sub);
+var search = document.getElementsByClassName('search-submit');
+var btns = Array.from(search);
 
-sub2.forEach(function (sub3) {
-  sub3.addEventListener("click", function () {
-    showAddress3();
+btns.forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    showAddressZoom();
   });
 })
+// ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑

@@ -22,8 +22,8 @@ var addressData = [];
 var payData = [];
 var count = -1;
 
-var localSerch_store = [];
-var localserch_pay = [];
+var localSearch_store = [];
+var localSearch_pay = [];
 
 // 決済先生 住所登録の全ての情報を取得
 window.onload = async function () {
@@ -40,8 +40,8 @@ window.onload = async function () {
     
     for (let key in doc1.data()) {
 
-      localSerch_store.push(key);
-      localserch_pay.push(doc1.data()[key]);
+      localSearch_store.push(key);
+      localSearch_pay.push(doc1.data()[key]);
 
     }
 
@@ -65,7 +65,7 @@ window.onload = async function () {
   // var tid = setInterval(function () {
   window.globalData.count++;
   showAddress();
-  showAddress2();
+  showAddress_localSearch();
   console.log(window.globalData.count);
   //   if (window.globalData.count >= addressData.length - 1) {
   //     clearInterval(tid);
@@ -97,5 +97,5 @@ window.globalData.addressData = addressData;
 window.globalData.payData = payData;
 window.globalData.count = count;
 
-window.globalData.localSerch_store = localSerch_store;
-window.globalData.localSerch_pay = localserch_pay;
+window.globalData.localSearch_store = localSearch_store;
+window.globalData.localSearch_pay = localSearch_pay;
