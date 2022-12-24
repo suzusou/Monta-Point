@@ -42,7 +42,7 @@ function showResult(result) {
     console.log(result)
 
     var splitLatLng = result.Feature[0].Geometry.Coordinates.split(',');
-    var realLat = splitLatLng[1] + "," + splitLatLng[0];
+    // var realLat = splitLatLng[1] + "," + splitLatLng[0];
 
     // alert(result.ResultInfo.Count + "件の結果が見つかりました。\n" +
     //   result.Feature[0].Name + "の座標は" + realLat + "です。" + splitLatLng[2]);
@@ -140,7 +140,7 @@ function showResult(result) {
     showAddress();
     console.log(window.globalData.count);
   } else {
-    console.timeEnd("count");
+    // console.timeEnd("count");
   }
 }
 
