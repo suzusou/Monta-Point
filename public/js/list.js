@@ -26,13 +26,15 @@ var localSearch_store = [];
 var localSearch_pay = [];
 
 // 決済先生 住所登録の全ての情報を取得
-window.onload = async function () {
+async function a() {
   const shot = await getDocs(collection(db, "決済先生 住所登録"));
-  shot.forEach((doc) => {
-    console.log(doc.id, "=>", doc.data().pay, doc.data().address);
-    storeData.push(doc.id);
-    addressData.push(doc.data().address);
-    payData.push(doc.data().pay);
+  shot.forEach((doc1) => {
+    if (doc1.data().address.indexOf(area2) !== -1 && (area2 !== "名古屋市" || doc1.data().address.indexOf("区") === -1)) {
+      console.log(doc1.id, "=>", doc1.data().pay, doc1.data().address);
+    storeData.push(doc1.id);
+    addressData.push(doc1.data().address);
+    payData.push(doc1.data().pay);
+  }
   })
 
   const shot2 = await getDocs(collection(db, "決済先生"));
@@ -74,10 +76,6 @@ window.onload = async function () {
 
   // setPin();
 }
-
-function a (){
-  console.log("a")
-}
 // Item.prototype.setValue = function (val) {
 //   this._val = val;
 //   alert('Itemの値が ->' + val + '<- に変更された。');
@@ -101,6 +99,7 @@ function a (){
 
 
 window.globalData = {};
+window.globalData.address = "";
 window.globalData.addressData = addressData;
 window.globalData.payData = payData;
 window.globalData.count = count;
