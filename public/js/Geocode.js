@@ -17,9 +17,75 @@ function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), options);
 
+  geol(latLng);
+
+  map.addListener('mouseup', function () {
+
+    var tyuusin = map.getCenter();
+
+    // var 中心座標 = tyuusin.lat() + "," + tyuusin.lng();
+
+    // console.log(中心座標);
+
+    Mapltlg = new google.maps.LatLng(tyuusin.lat(), tyuusin.lng());
+
+    geol(Mapltlg);
+
+  });
+
 }
 
 /*------------------------------------------------------------------------------------------------- */
+
+
+function geol(position) {
+
+  var lat = position.lat();
+  var lon = position.lng();
+
+  var url = "https://map.yahooapis.jp/geoapi/V1/reverseGeoCoder?lat=" + lat + "&lon=" + lon + "&appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&output=json&callback=geol_showResult";
+  geol_callJSONP(url);
+}
+
+function geol_callJSONP(url) {
+
+  var target = document.createElement('script');
+  target.charset = 'utf-8';
+  target.src = url;
+  document.body.appendChild(target);
+
+}
+
+var str = "";
+var str1 = "";
+var str2 = "";
+
+function geol_showResult(result) {
+
+  if (result.ResultInfo.Count > 0) {
+    try {
+      var address = result.Feature[0].Property.AddressElement[1].Name;
+      console.log(address);
+      str = address.replace(/(.*郡)(.*[町村])/, '$2');
+      console.log(str);
+      if (window.globalData.address != str) {
+        window.globalData.address = str;
+        window.globalData.a();
+      }
+    } catch (e) {
+      console.log("a" + e);
+    }
+
+
+  } else {
+
+    console.log("検索結果が見つかりませんでした。");
+
+  }
+}
+
+
+// -------------------------------------------------------------------------------------------------
 
 //住所を表示する
 function showAddress() {
