@@ -8,6 +8,11 @@ function initMap() {
   var options = {
     zoom: 8,       //地図の縮尺値を設定する
     center: latLng,  //地図の中心座標を設定する
+    center: latLng, //地図の中心座標を設定する
+    mapTypeControl: false, //falseでマップ名及び航空写真（マップタイプ）の非表示
+    streetViewControl: false, //falseでストリートビュー非表示
+    fullscreenControl: false, //falseで「」拡大表示を非表示
+    zoomControl: false, //falseで＋とーのボタンを非表示
   };
 
   map = new google.maps.Map(document.getElementById('map'), options);
@@ -145,7 +150,7 @@ function showResult(result) {
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// 以下ローカルサーチ
+// 以下localSearch
 
 var count_localSearch = 0;
 
