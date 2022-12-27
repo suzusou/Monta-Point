@@ -192,7 +192,7 @@ function showResult_localSearch(result) {
 
     var splitLatLng_localSearch = result.Feature[0].Geometry.Coordinates.split(',');
 
-    latLang_localSearch= new google.maps.LatLng(Number(splitLatLng_localSearch[1]), Number(splitLatLng_localSearch[0]));
+    latLang_localSearch = new google.maps.LatLng(Number(splitLatLng_localSearch[1]), Number(splitLatLng_localSearch[0]));
 
     var marker_localSearch = new google.maps.Marker({
       map: map,           //表示している地図を指定する
@@ -264,7 +264,7 @@ function showResult_localSearch(result) {
     marker_localSearch.addListener('mouseout', function (e) {
 
       // console.log(marker[int].title);
-      infoWindow_localSearch.close(map,marker_localSearch)
+      infoWindow_localSearch.close(map, marker_localSearch)
 
     });
 
@@ -341,6 +341,7 @@ var btns = Array.from(search);
 btns.forEach(function (btn) {
   btn.addEventListener("click", function () {
     showAddressZoom();
+    window.globalData.a();
   });
 })
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑

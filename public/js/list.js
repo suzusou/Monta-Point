@@ -75,6 +75,14 @@ window.onload = async function () {
   // setPin();
 }
 
+function a (){
+  console.log("a")
+}
+// Item.prototype.setValue = function (val) {
+//   this._val = val;
+//   alert('Itemの値が ->' + val + '<- に変更された。');
+// }
+
 // document.getElementById("sample").addEventListener("click", function () {
 
 
@@ -99,3 +107,5 @@ window.globalData.count = count;
 
 window.globalData.localSearch_store = localSearch_store;
 window.globalData.localSearch_pay = localSearch_pay;
+
+window.globalData.a = a;
