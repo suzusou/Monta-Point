@@ -1,101 +1,1490 @@
 <!DOCTYPE html>
-
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
-
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/9.14.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/9.14.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/9.14.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="icon/favicon.ico">
-    <script>
-      if ('serviceWorker' in navigator) {
-          navigator.serviceWorker.register('sw.js').then(registration => {
-              console.log('successful',registration);
-          }).catch(err => {
-              console.log('failed',err);
-          });
-      }
-  </script>
+    <meta charset="utf-8" />
+    <title>決済先生</title>
+    <script
+      src="https://kit.fontawesome.com/9cb34e4153.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/layout-home.css" />
   </head>
+
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    <!--PC画面-->
+    <div class="for-pc">
+      <!-- header -->
+      <header id="header-all">
+        <h6 class="headline">
+          <a>決済先生</a>
+        </h6>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="index.html" class="nav-list-item" id="black"
+              ><i class="fa-solid fa-house"></i> ホーム</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="google_maps.html" class="black"
+              ><i class="fa-solid fa-location-dot"></i> 一覧</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="" class="black"
+              ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
+            >
+          </li>
+          <!--カテゴリー一覧表示-->
+          <!-- <ul class="menu">
+            <li class="nav-list-item">
+              <a href=""><i class="fa-solid fa-list"></i> カテゴリー</a>
+              <ul>
+                <li id="category-list"><a href="#food-jump">飲食店</a></li>
+                <li id="category-list"><a href="#electronic-jump">家電</a></li>
+                <li id="category-list">
+                  <a href="#fashion-jump">ファッション</a>
+                </li>
+                <li id="category-list">
+                  <a href="#drug-jump">ドラッグストア</a>
+                </li>
+              </ul>
+            </li>
+          </ul> -->
+        </ul>
+        <div class="wrapper" class="help">
+          <div class="hamburger">
+            <a><i class="fa-solid fa-circle-info" color="white"></i></a>
+          </div>
+          <nav class="menu">
+            <b id="hanbur-title">操作説明</b>
+            <ul>
+              <li id="sub-title">ホーム画面</li>
+              <li>メニュー2</li>
+              <li>メニュー3</li>
+              <li>メニュー4</li>
+              <li>メニュー5</li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <!--header-->
+      <!--飲食店１個目-->
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1 id="kategori">飲食店</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-mark.webp?alt=media&token=ff9aaaca-eb73-4f79-99b4-16714aa69ca2"
+            />
+            <p id="mozi-text">マクドナルド</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-pay.png?alt=media&token=8b7c015b-36d5-46fc-9b8a-06790168a5c4"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbacks-mark.png?alt=media&token=81edffef-3298-4246-b135-740544b77efd"
+            />
+            <p id="mozi-text">スターバックス</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbucks-pay.png?alt=media&token=bfa6bb3a-e867-4f79-adfb-2af1d85c4814"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyoshinoya-mark.jpg?alt=media&token=34f50d66-492c-4ad2-bc8c-4ca1b4d4ecb0"
+            />
+            <p id="mozi-text">吉野家</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyosinoya-pay.png?alt=media&token=23db34f8-997b-46a7-9b4d-6c5b092af38f"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--飲食店４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-mark.jpg?alt=media&token=9e88533e-df4d-47bd-b49b-91041e6bf6ce"
+            />
+            <p id="mozi-text">すき家</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-pay.png?alt=media&token=7ff866fa-2f5a-474d-97e9-c231f1ac94c8"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmarugame-mark.jpeg?alt=media&token=c0fd249d-d1ee-4af8-a8c7-6b1fa531cea3"
+            />
+            <p id="mozi-text">丸亀製麵</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmargame-pay.png?alt=media&token=6b33fbe4-bb9e-4881-a00c-623db7cb5bc7"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-mark.png?alt=media&token=f492296c-9fc4-4b59-bb71-a397d4f278f3"
+            />
+            <p id="mozi-text">モスバーガー</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-pay.png?alt=media&token=acfb39b0-2d75-4e3a-b759-3077ab3cc15c"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--家電１個目-->
+      <h1 id="kategori">家電</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-mark.jpg?alt=media&token=7ce2cf83-6289-40fb-a8dd-4cac0e802a65"
+            />
+            <p id="mozi-text">エディオン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-pay.png?alt=media&token=16da84aa-5407-4de6-9992-2c01c38a7a40"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title" id="shop-mark-other">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-mark.png?alt=media&token=694de270-8aaf-470d-9752-fb71f1741679"
+            />
+            <p id="mozi-text">ジョーシン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-pay.png?alt=media&token=7f0c98d0-1f43-4c4a-9ef9-69732cc919c7"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-mark.jpg?alt=media&token=508a2c9a-8668-44bd-b5fb-800b464c3b9b"
+            />
+            <p id="mozi-text">ビックカメラ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-pay.png?alt=media&token=eb79e882-1bf0-4d5c-8b7a-879045e83515"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--家電４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-mark.jpg?alt=media&token=7adb0f23-1b1d-46f1-becb-8c25b59b704b"
+            />
+            <p id="mozi-text">ヤマダデンキ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-pay.png?alt=media&token=d602dae6-3973-455d-b354-b2ed0ac2066d"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title" id="shop-mark-other">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-mark.png?alt=media&token=4d99bb2b-d10b-4097-aff4-9e0ca191ac71"
+            />
+            <p id="mozi-text">ケーズデンキ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-pay.png?alt=media&token=66e12184-eef3-4159-8ba8-0d25bc23c7e4"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-mark.png?alt=media&token=7f88d73a-a7ea-4f7f-825f-2543c439bd9c"
+            />
+            <p id="mozi-text">コジマ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-pay.png?alt=media&token=8efd2bd3-3396-4dd2-a570-a1208e2f3b00"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ファッション１個目-->
+      <h1 id="kategori">ファッション</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-mark.png?alt=media&token=1ea70603-06d3-4cab-b0c2-7103a9b75fcc"
+            />
+            <p id="mozi-text">ＧＵ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-pay.png?alt=media&token=c7da8aee-cfec-4ea0-86b6-7862005e5d21"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-mark.png?alt=media&token=cecfe185-a7ab-42c0-84e9-be6ff1fa570b"
+            />
+            <p id="mozi-text">ユニクロ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-pay.png?alt=media&token=29e05a95-50d4-4bf4-806e-10723dd125c2"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-mark.png?alt=media&token=151afc17-10a5-4317-934d-62cd44b8ec14"
+            />
+            <p id="mozi-text">Ｈ＆Ｍ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-pay.png?alt=media&token=3ec77960-0b57-4069-8728-4293af1a8a29"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ファッション４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-mark.png?alt=media&token=5c818fa8-39f4-45e1-88f9-592734b9648e"
+            />
+            <p id="mozi-text">ライトオン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-on-pay.png?alt=media&token=df086e1e-ee73-4c41-9d4c-83bf0c54c114"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-mark.jpg?alt=media&token=e4934247-7e03-4b63-9644-b9c0aacdfc07"
+            />
+            <p id="mozi-text">ＷＥＧＯ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-pay.png?alt=media&token=8f08dbe5-c688-4373-9082-4616d277761d"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-mark.png?alt=media&token=67a3e523-d4ee-4926-97ef-5c0b21093569"
+            />
+            <p id="mozi-text">ＧＡＰ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-pay.png?alt=media&token=8c8533df-8bcc-4354-aed3-61069035a86c"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ドラッグストア１個目-->
+      <h1 id="kategori">ドラッグストア</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-mark.jpg?alt=media&token=ae31a51e-8d38-4fb5-80d3-6e138f756025"
+            />
+            <p id="mozi-text">スギ薬局</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-pay.png?alt=media&token=d07a61dc-43c0-4aef-bfb2-bd83d046effc"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-mark.jpeg?alt=media&token=00ab4047-fe04-401b-8283-30ff45875c5d"
+            />
+            <p id="mozi-text">スギヤマ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-pay.png?alt=media&token=6ce6bf74-77b2-42cc-8f67-e5a812a87a94"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatsukiyo_mark.png?alt=media&token=fa3edf71-58b4-4b52-b9fa-aeb4c1b94508"
+            />
+            <p id="mozi-text">マツモトキヨシ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatumoto-pay.png?alt=media&token=56e35d3f-a337-4d12-9531-e6d291b59fca"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ドラッグストア４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title" id="acordion1">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-mark.jpg?alt=media&token=d05b9ece-8414-4ce8-9769-fd4ae3438cf8"
+            />
+            <p id="mozi-text">クリエイト</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-pay.png?alt=media&token=3c8caf3e-8298-4949-8a5c-18ada47d28fe"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title" id="acordion2">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-mark.jpg?alt=media&token=71ab0ace-65bd-4aa2-be42-12745cdcdbca"
+            />
+            <p id="mozi-text">ウエルシア</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-pay.png?alt=media&token=7a0b9621-fd35-4573-a74f-0bb39a3a8e42"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title" id="acordion3">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-mark.jpg?alt=media&token=1e84ea66-3d38-428a-8aff-97ae6e04e325"
+            />
+            <p id="mozi-text">コスモス</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-pay.png?alt=media&token=6186c2f5-92ee-4df8-b1a7-a26b855df616"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <!--960px画面-->
+    <div class="for-tb">
+      <!--飲食店１個目-->
+      <br />
+      <br />
+      <br />
+      <h1 id="kategori">飲食店</h1>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-mark.webp?alt=media&token=ff9aaaca-eb73-4f79-99b4-16714aa69ca2"
+            />
+            <p id="mozi-text">マクドナルド</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-pay.png?alt=media&token=8b7c015b-36d5-46fc-9b8a-06790168a5c4"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbacks-mark.png?alt=media&token=81edffef-3298-4246-b135-740544b77efd"
+            />
+            <p id="mozi-text">スターバックス</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbucks-pay.png?alt=media&token=bfa6bb3a-e867-4f79-adfb-2af1d85c4814"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--飲食店３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyoshinoya-mark.jpg?alt=media&token=34f50d66-492c-4ad2-bc8c-4ca1b4d4ecb0"
+            />
+            <p id="mozi-text">吉野家</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyosinoya-pay.png?alt=media&token=23db34f8-997b-46a7-9b4d-6c5b092af38f"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--飲食店４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-mark.jpg?alt=media&token=9e88533e-df4d-47bd-b49b-91041e6bf6ce"
+            />
+            <p id="mozi-text">すき家</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-pay.png?alt=media&token=7ff866fa-2f5a-474d-97e9-c231f1ac94c8"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--飲食店５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmarugame-mark.jpeg?alt=media&token=c0fd249d-d1ee-4af8-a8c7-6b1fa531cea3"
+            />
+            <p id="mozi-text">丸亀製麵</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmargame-pay.png?alt=media&token=6b33fbe4-bb9e-4881-a00c-623db7cb5bc7"
+            />
+          </div>
+        </div>
+      </div>
+      <!--飲食店６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-mark.png?alt=media&token=f492296c-9fc4-4b59-bb71-a397d4f278f3"
+            />
+            <p id="mozi-text">モスバーガー</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-pay.png?alt=media&token=acfb39b0-2d75-4e3a-b759-3077ab3cc15c"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--家電１個目-->
+      <h1 id="kategori">家電</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-mark.jpg?alt=media&token=7ce2cf83-6289-40fb-a8dd-4cac0e802a65"
+            />
+            <p id="mozi-text">エディオン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-pay.png?alt=media&token=16da84aa-5407-4de6-9992-2c01c38a7a40"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-mark.png?alt=media&token=694de270-8aaf-470d-9752-fb71f1741679"
+            />
+            <p id="mozi-text">ジョーシン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-pay.png?alt=media&token=7f0c98d0-1f43-4c4a-9ef9-69732cc919c7"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--家電３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-mark.jpg?alt=media&token=508a2c9a-8668-44bd-b5fb-800b464c3b9b"
+            />
+            <p id="mozi-text">ビックカメラ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-pay.png?alt=media&token=eb79e882-1bf0-4d5c-8b7a-879045e83515"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--家電４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-mark.jpg?alt=media&token=7adb0f23-1b1d-46f1-becb-8c25b59b704b"
+            />
+            <p id="mozi-text">ヤマダデンキ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-pay.png?alt=media&token=d602dae6-3973-455d-b354-b2ed0ac2066d"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--家電５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-mark.png?alt=media&token=4d99bb2b-d10b-4097-aff4-9e0ca191ac71"
+            />
+            <p id="mozi-text">ケーズデンキ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-pay.png?alt=media&token=66e12184-eef3-4159-8ba8-0d25bc23c7e4"
+            />
+          </div>
+        </div>
+      </div>
+      <!--家電６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-mark.png?alt=media&token=7f88d73a-a7ea-4f7f-825f-2543c439bd9c"
+            />
+            <p id="mozi-text">コジマ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-pay.png?alt=media&token=8efd2bd3-3396-4dd2-a570-a1208e2f3b00"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ファッション１個目-->
+      <h1 id="kategori">ファッション</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-mark.png?alt=media&token=1ea70603-06d3-4cab-b0c2-7103a9b75fcc"
+            />
+            <p id="mozi-text">ＧＵ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-pay.png?alt=media&token=c7da8aee-cfec-4ea0-86b6-7862005e5d21"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-mark.png?alt=media&token=cecfe185-a7ab-42c0-84e9-be6ff1fa570b"
+            />
+            <p id="mozi-text">ユニクロ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-pay.png?alt=media&token=29e05a95-50d4-4bf4-806e-10723dd125c2"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ファッション３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-mark.png?alt=media&token=151afc17-10a5-4317-934d-62cd44b8ec14"
+            />
+            <p id="mozi-text">Ｈ＆Ｍ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-pay.png?alt=media&token=3ec77960-0b57-4069-8728-4293af1a8a29"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--ファッション４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-mark.png?alt=media&token=5c818fa8-39f4-45e1-88f9-592734b9648e"
+            />
+            <p id="mozi-text">ライトオン</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-on-pay.png?alt=media&token=df086e1e-ee73-4c41-9d4c-83bf0c54c114"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ファッション５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-mark.jpg?alt=media&token=e4934247-7e03-4b63-9644-b9c0aacdfc07"
+            />
+            <p id="mozi-text">ＷＥＧＯ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-pay.png?alt=media&token=8f08dbe5-c688-4373-9082-4616d277761d"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ファッション６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-mark.png?alt=media&token=67a3e523-d4ee-4926-97ef-5c0b21093569"
+            />
+            <p id="mozi-text">ＧＡＰ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-pay.png?alt=media&token=8c8533df-8bcc-4354-aed3-61069035a86c"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ドラッグストア１個目-->
+      <h1 id="kategori">ドラッグストア</h1>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <div id="shop-acordion">
+        <div id="shop-mozi1">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-mark.jpg?alt=media&token=ae31a51e-8d38-4fb5-80d3-6e138f756025"
+            />
+            <p id="mozi-text">スギ薬局</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-pay.png?alt=media&token=d07a61dc-43c0-4aef-bfb2-bd83d046effc"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア２個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi2">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-mark.jpeg?alt=media&token=00ab4047-fe04-401b-8283-30ff45875c5d"
+            />
+            <p id="mozi-text">スギヤマ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-pay.png?alt=media&token=6ce6bf74-77b2-42cc-8f67-e5a812a87a94"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ドラッグストア３個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi3">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatsukiyo_mark.png?alt=media&token=fa3edf71-58b4-4b52-b9fa-aeb4c1b94508"
+            />
+            <p id="mozi-text">マツモトキヨシ</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatumoto-pay.png?alt=media&token=56e35d3f-a337-4d12-9531-e6d291b59fca"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!--ドラッグストア４個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi4">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-mark.jpg?alt=media&token=d05b9ece-8414-4ce8-9769-fd4ae3438cf8"
+            />
+            <p id="mozi-text">クリエイト</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-pay.png?alt=media&token=3c8caf3e-8298-4949-8a5c-18ada47d28fe"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--ドラッグストア５個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi5">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-mark.jpg?alt=media&token=71ab0ace-65bd-4aa2-be42-12745cdcdbca"
+            />
+            <p id="mozi-text">ウエルシア</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-pay.png?alt=media&token=7a0b9621-fd35-4573-a74f-0bb39a3a8e42"
+            />
+          </div>
+        </div>
+      </div>
+      <!--ドラッグストア６個目-->
+      <div id="shop-acordion">
+        <div id="shop-mozi6">
+          <div class="acordion-title">
+            <img
+              id="shop-mark"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-mark.jpg?alt=media&token=1e84ea66-3d38-428a-8aff-97ae6e04e325"
+            />
+            <p id="mozi-text">コスモス</p>
+          </div>
+          <div class="acordion-contents">
+            <img
+              id="shop-pay"
+              src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-pay.png?alt=media&token=6186c2f5-92ee-4df8-b1a7-a26b855df616"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- アコーディオン改行コード -->
+      <div class="clear"></div>
+
+      <!--footer開始-->
+      <footer>
+        <nav>
+          <ul>
+            <li id="ul-list-item1">
+              <a href="index.html" class="black"
+                ><i class="fa-solid fa-house"></i>ホーム</a
+              >
+            </li>
+            <li id="ul-list-item2">
+              <a href="google_maps.html" class="black"
+                ><i class="fa-solid fa-location-dot"></i> 一覧</a
+              >
+            </li>
+            <li id="ul-list-item3">
+              <a href="add-list.html" class="black"
+                ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </footer>
+
+      <!--footer終了-->
+    </div>
+
+    <!--スマホ画面-->
+    <div class="for-sp">
+      <!--飲食店１個目-->
+      <h2 id="food-jump">　飲食店</h2>
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-mark.webp?alt=media&token=ff9aaaca-eb73-4f79-99b4-16714aa69ca2"
+          />マクドナルド
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-pay.png?alt=media&token=8b7c015b-36d5-46fc-9b8a-06790168a5c4"
+          />
+        </div>
+      </div>
+
+      <!--飲食店２個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbacks-mark.png?alt=media&token=81edffef-3298-4246-b135-740544b77efd"
+          />スターバックス
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbucks-pay.png?alt=media&token=bfa6bb3a-e867-4f79-adfb-2af1d85c4814"
+          />
+        </div>
+      </div>
+
+      <!--飲食店３個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-yosinoya"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyoshinoya-mark.jpg?alt=media&token=34f50d66-492c-4ad2-bc8c-4ca1b4d4ecb0"
+          />吉野家
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyosinoya-pay.png?alt=media&token=23db34f8-997b-46a7-9b4d-6c5b092af38f"
+          />
+        </div>
+      </div>
+
+      <!--飲食店４個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-sukiya"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-mark.jpg?alt=media&token=9e88533e-df4d-47bd-b49b-91041e6bf6ce"
+          />すき家
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-pay.png?alt=media&token=7ff866fa-2f5a-474d-97e9-c231f1ac94c8"
+          />
+        </div>
+      </div>
+
+      <!--飲食店５個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-marugame"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmarugame-mark.jpeg?alt=media&token=c0fd249d-d1ee-4af8-a8c7-6b1fa531cea3"
+          />丸亀製麵
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmargame-pay.png?alt=media&token=6b33fbe4-bb9e-4881-a00c-623db7cb5bc7"
+          />
+        </div>
+      </div>
+
+      <!--飲食店６個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-mos"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-mark.png?alt=media&token=f492296c-9fc4-4b59-bb71-a397d4f278f3"
+          />モスバーガー
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-pay.png?alt=media&token=acfb39b0-2d75-4e3a-b759-3077ab3cc15c"
+          />
+        </div>
+      </div>
+
+      <!--家電１個目-->
+      <h2 id="electronic-jump"><br />　家電</h2>
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-ed"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-mark.jpg?alt=media&token=7ce2cf83-6289-40fb-a8dd-4cac0e802a65"
+          />エディオン
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-pay.png?alt=media&token=16da84aa-5407-4de6-9992-2c01c38a7a40"
+          />
+        </div>
+      </div>
+
+      <!--家電２個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-joshin"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-mark.png?alt=media&token=694de270-8aaf-470d-9752-fb71f1741679"
+          />ジョーシン
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-pay.png?alt=media&token=7f0c98d0-1f43-4c4a-9ef9-69732cc919c7"
+          />
+        </div>
+      </div>
+
+      <!--家電３個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-kaden"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-mark.jpg?alt=media&token=508a2c9a-8668-44bd-b5fb-800b464c3b9b"
+          />ビックカメラ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-pay.png?alt=media&token=eb79e882-1bf0-4d5c-8b7a-879045e83515"
+          />
+        </div>
+      </div>
+
+      <!--家電４個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-kaden"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-mark.jpg?alt=media&token=7adb0f23-1b1d-46f1-becb-8c25b59b704b"
+          />ヤマダデンキ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-pay.png?alt=media&token=d602dae6-3973-455d-b354-b2ed0ac2066d"
+          />
+        </div>
+      </div>
+
+      <!--家電５個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-kz"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-mark.png?alt=media&token=4d99bb2b-d10b-4097-aff4-9e0ca191ac71"
+          />ケーズデンキ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-pay.png?alt=media&token=66e12184-eef3-4159-8ba8-0d25bc23c7e4"
+          />
+        </div>
+      </div>
+
+      <!--家電６個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-kozima"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-mark.png?alt=media&token=7f88d73a-a7ea-4f7f-825f-2543c439bd9c"
+          />コジマ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-pay.png?alt=media&token=8efd2bd3-3396-4dd2-a570-a1208e2f3b00"
+          />
+        </div>
+      </div>
+
+      <!--ファッション１個目-->
+      <h2 id="fashion-jump"><br />　ファッション</h2>
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-gu"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-mark.png?alt=media&token=1ea70603-06d3-4cab-b0c2-7103a9b75fcc"
+          />ＧＵ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-pay.png?alt=media&token=c7da8aee-cfec-4ea0-86b6-7862005e5d21"
+          />
+        </div>
+      </div>
+
+      <!--ファッション２個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-yunikuro"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-mark.png?alt=media&token=cecfe185-a7ab-42c0-84e9-be6ff1fa570b"
+          />ユニクロ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-pay.png?alt=media&token=29e05a95-50d4-4bf4-806e-10723dd125c2"
+          />
+        </div>
+      </div>
+
+      <!--ファッション３個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-hm"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-mark.png?alt=media&token=151afc17-10a5-4317-934d-62cd44b8ec14"
+          />Ｈ＆Ｍ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-pay.png?alt=media&token=3ec77960-0b57-4069-8728-4293af1a8a29"
+          />
+        </div>
+      </div>
+
+      <!--ファッション４個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-right"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-mark.png?alt=media&token=5c818fa8-39f4-45e1-88f9-592734b9648e"
+          />ライトオン
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-on-pay.png?alt=media&token=df086e1e-ee73-4c41-9d4c-83bf0c54c114"
+          />
+        </div>
+      </div>
+
+      <!--ファッション５個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-wego"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-mark.jpg?alt=media&token=e4934247-7e03-4b63-9644-b9c0aacdfc07"
+          />ＷＥＧＯ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-pay.png?alt=media&token=8f08dbe5-c688-4373-9082-4616d277761d"
+          />
+        </div>
+      </div>
+
+      <!--ファッション６個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-gap"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-mark.png?alt=media&token=67a3e523-d4ee-4926-97ef-5c0b21093569"
+          />ＧＡＰ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-pay.png?alt=media&token=8c8533df-8bcc-4354-aed3-61069035a86c"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア１個目-->
+      <h2 id="drug-jump"><br />　ドラッグストア</h2>
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-sugi"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-mark.jpg?alt=media&token=ae31a51e-8d38-4fb5-80d3-6e138f756025"
+          />スギ薬局
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-pay.png?alt=media&token=d07a61dc-43c0-4aef-bfb2-bd83d046effc"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア２個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-sugiyama"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-mark.jpeg?alt=media&token=00ab4047-fe04-401b-8283-30ff45875c5d"
+          />スギヤマ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-pay.png?alt=media&token=6ce6bf74-77b2-42cc-8f67-e5a812a87a94"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア３個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatsukiyo_mark.png?alt=media&token=fa3edf71-58b4-4b52-b9fa-aeb4c1b94508"
+          />マツモトキヨシ
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatumoto-pay.png?alt=media&token=56e35d3f-a337-4d12-9531-e6d291b59fca"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア４個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-other"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-mark.jpg?alt=media&token=d05b9ece-8414-4ce8-9769-fd4ae3438cf8"
+          />クリエイト
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-pay.png?alt=media&token=3c8caf3e-8298-4949-8a5c-18ada47d28fe"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア５個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-other"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-mark.jpg?alt=media&token=71ab0ace-65bd-4aa2-be42-12745cdcdbca"
+          />ウエルシア
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-pay.png?alt=media&token=7a0b9621-fd35-4573-a74f-0bb39a3a8e42"
+          />
+        </div>
+      </div>
+
+      <!--ドラッグストア６個目-->
+      <div id="shop-mozi">
+        <div class="acordion-title">
+          <img
+            id="shop-mark-kosumosu"
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-mark.jpg?alt=media&token=1e84ea66-3d38-428a-8aff-97ae6e04e325"
+          />コスモス
+        </div>
+        <div class="acordion-contents">
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-pay.png?alt=media&token=6186c2f5-92ee-4df8-b1a7-a26b855df616"
+          />
+        </div>
+      </div>
+      <br />
+      <br />
+      <!--footer開始-->
+      <footer>
+        <nav>
+          <ul>
+            <li id="ul-list-item1">
+              <a href="index.html" class="black"
+                ><i class="fa-solid fa-house"></i>ホーム</a
+              >
+            </li>
+            <li id="ul-list-item2">
+              <a href="google_maps.html" class="black"
+                ><i class="fa-solid fa-location-dot"></i> 一覧</a
+              >
+            </li>
+            <li id="ul-list-item3">
+              <a href="add-list.html" class="black"
+                ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </footer>
+
+      <!--footer終了-->
+    </div>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/index.js"></script>
   </body>
 </html>

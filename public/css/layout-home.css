@@ -1,0 +1,841 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+}
+/* アコーヂオン矢印消す */
+/* Chrome、Safari以外 */
+summary {
+  display: block;
+}
+/* アコーヂオン矢印消す */
+/* Chrome、Safari */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.for-pc {
+  display: block;
+}
+.for-tb {
+  display: none;
+}
+.for-sp {
+  display: none;
+}
+/*PC画面*/
+@media screen and (max-width: 1280px) {
+  .for-pc {
+    display: block;
+  }
+  .for-tb {
+    display: none;
+  }
+  .for-sp {
+    display: none;
+  }
+  header {
+    height: 60px;
+    width: 100%;
+    padding: 15px 0;
+    justify-content: space-around;
+    background-color: aqua;
+    color: black;
+    /* position: fixed; */
+  }
+
+  header .headline {
+    line-height: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    margin-left: 20px;
+    position: fixed;
+  }
+  .nav-list {
+    /* line-height: 0px; */
+    /* float: left; */
+    margin-left: 170px;
+    font-size: 22px;
+    list-style: none;
+    /* position: fixed; */
+  }
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    margin-left: 25px;
+    /* position: fixed; */
+  }
+
+  a {
+    text-decoration: none;
+  }
+  header#header-all {
+    position: fixed;
+    user-select: none;
+    z-index: 10;
+  }
+
+  /*カテゴリ一覧表示*/
+  /* .menu {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .menu > li {
+    display: inline-block;
+    position: fixed;
+    width: 175px;
+  }
+  .menu > li > ul {
+    display: none;
+  }
+  .menu > li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+  }
+  #category-list {
+    border: ridge 2px;
+  } */
+  .black {
+    color: #000;
+  }
+  #black {
+    color: #000;
+  }
+
+  #shop-mark {
+    height: 4vw;
+    float: left;
+  }
+  #shop-mozi1 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: 10vh;
+    margin-bottom: 190px;
+    /* margin-top: 150px; */
+    margin-left: 2vw;
+    /* margin-left: -120px; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi2 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: 10vh;
+    margin-bottom: 190px;
+    /* margin-top: 150px; */
+    margin-left: 2vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi3 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: 10vh;
+    margin-bottom: 190px;
+    /* margin-top: 150px; */
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi4 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -12vh;
+    margin-bottom: 190px;
+
+    margin-left: 2vw;
+    /* margin-left: -120px; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi5 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -12vh;
+    margin-bottom: 190px;
+    margin-left: 2vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi6 {
+    width: 30vw;
+    font-size: 2vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -12vh;
+    margin-bottom: 190px;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-acordion {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    /* margin-left: 100px; */
+  }
+  /* アコーディオン改行のcss */
+  .clear {
+    clear: both;
+  }
+  #kategori {
+    margin-top: -50px;
+    margin-left: 20px;
+    float: left;
+    padding: 1rem 2rem;
+    border-left: 5px solid #000;
+    background: #f4f4f4;
+    user-select: none;
+  }
+  .acordion-title {
+    margin-left: 3.5vw;
+  }
+  .acordion-contents {
+    clear: both;
+    text-align: center;
+  }
+  #shop-mark-other {
+    margin-left: 0vw;
+  }
+
+  #shop-pay {
+    margin-top: 2vh;
+    margin-left: -1vw;
+    width: 25vw;
+  }
+
+  /* アコーディオンの文字の配置調整 */
+  #mozi-text {
+    position: relative;
+    top: 1.8vh;
+    left: 0.8vw;
+  }
+
+  /* ハンバーガーメニューレイアウト */
+  .wrapper {
+    position: relative;
+    background: #f5f5f5;
+  }
+  .help {
+    list-style: none;
+    display: block;
+
+    margin-right: 25px;
+  }
+  i {
+    font-size: 2vw;
+  }
+  /* ハンバーガーメニュー */
+  #hanbur-title {
+    font-size: 3vw;
+    margin-left: 3vw;
+  }
+  #sub-title {
+    font-size: 2vw;
+  }
+  .hamburger {
+    width: 30px;
+    height: 30px;
+    background: aqua;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 92vw;
+    top: -7vh;
+    z-index: 999;
+  }
+  .hamburger:hover {
+    cursor: pointer;
+  }
+  .hamburger span {
+    background: #fff;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s ease-out;
+  }
+  .hamburger span:nth-of-type(1) {
+    top: 15px;
+  }
+  .hamburger span:nth-of-type(3) {
+    bottom: 15px;
+  }
+  /* ハンバーガーメニューにactiveクラスがついたときのスタイル */
+  .hamburger.active span:nth-of-type(1) {
+    transform: translateY(9px) rotate(-45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(3) {
+    transform: translateY(-9px) rotate(45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  /* メニュー */
+  .menu {
+    width: 50vw;
+    height: 100vh;
+    background: #fff;
+    color: black;
+    position: absolute;
+    padding-top: 40px;
+    padding-left: 5vw;
+    transform: translate(3000px);
+    transition: 0.3s ease-out;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  /* メニューにopenクラスがついたときのスタイル */
+  .menu.open {
+    transform: translate(50vw);
+    transition: 0.3s ease-out;
+  }
+}
+/*960px画面*/
+@media screen and (max-width: 960px) {
+  .for-pc {
+    display: none;
+  }
+  .for-tb {
+    display: block;
+  }
+  .for-sp {
+    display: none;
+  }
+  #shop-mark {
+    height: 6vw;
+    float: left;
+  }
+  #shop-mozi1 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-bottom: 190px;
+    /* margin-top: 150px; */
+    margin-left: 6vw;
+    /* margin-left: -120px; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi2 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-bottom: 190px;
+    /* margin-top: 150px; */
+    margin-left: 4vw;
+    margin-right: 6vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi3 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -10vh;
+    margin-bottom: 190px;
+
+    margin-left: 6vw;
+    /* margin-left: -120px; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi4 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -10vh;
+    margin-bottom: 190px;
+
+    margin-left: 4vw;
+    margin-right: 6vw;
+    /* margin-left: -120px; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi5 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -10vh;
+    margin-bottom: 190px;
+    margin-left: 6vw;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-mozi6 {
+    width: 42vw;
+    font-size: 3vw;
+    padding: 0.5em 1em;
+    margin: 1.5em 0;
+    margin-top: -10vh;
+    margin-bottom: 190px;
+    margin-left: 4vw;
+    margin-right: 6vw;
+    /* margin-right: 2vw; */
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+    user-select: none;
+  }
+  #shop-acordion {
+    display: flex;
+    float: left;
+    justify-content: space-between;
+    /* margin-left: 100px; */
+  }
+  /* アコーディオン改行のcss */
+  .clear {
+    clear: both;
+  }
+  #kategori {
+    margin-top: -50px;
+    margin-left: 20px;
+    float: left;
+    padding: 1rem 2rem;
+    border-left: 5px solid #000;
+    background: #f4f4f4;
+    user-select: none;
+  }
+
+  .acordion-title {
+    margin-left: 3.5vw;
+  }
+  .acordion-contents {
+    clear: both;
+    text-align: center;
+  }
+  #shop-pay {
+    width: 35vw;
+    margin-top: 2vh;
+  }
+  #shop-mark-other {
+    margin-left: 0vw;
+  }
+
+  /* アコーディオンの文字の配置調整 */
+  #mozi-text {
+    position: relative;
+    top: 1.2vh;
+    left: 0.8vw;
+  }
+
+  /*footerレイアウト開始*/
+  footer {
+    /*footerの装飾*/
+    width: 100%;
+    height: 6.5vh;
+    justify-content: space-around;
+    background-color: #89c7de;
+    color: #fff;
+    /* text-align: center; */
+    /* padding: 30px; */
+    position: fixed; /*←絶対位置*/
+    bottom: 0; /*下に固定*/
+  }
+  #ul-list-item1 {
+    display: block;
+    position: fixed;
+    margin-left: 10vw;
+    /* margin-right: 5vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 1.5em;
+  }
+  #ul-list-item2 {
+    display: block;
+    position: fixed;
+    margin-left: 40vw;
+    /* margin-right: 20vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 1.5em;
+  }
+  #ul-list-item3 {
+    display: block;
+    position: fixed;
+    margin-left: 67vw;
+    /* margin-right: 3vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 1.5em;
+  }
+  .black {
+    color: #000;
+  }
+  /*footerレイアウト終了*/
+
+  /* 検索レイアウト */
+  #search-all {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+    outline: 0;
+  }
+  #search-box {
+    position: absolute;
+    right: 15%;
+    width: 27%;
+    height: 5%;
+    border-radius: 10px;
+    top: 9px;
+    position: fixed; /*←絶対位置*/
+  }
+  #search-submit {
+    position: absolute;
+    right: 5%;
+    width: 9%;
+    height: 5%;
+    top: 9px;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: blue;
+    position: fixed; /*←絶対位置*/
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  #food-acordion {
+    display: flex;
+    /* margin-left: 100px; */
+  }
+  #kaden-acordion {
+    display: flex;
+    /* margin-left: 100px; */
+  }
+  #fashion-acordion {
+    display: flex;
+    /* margin-left: 100px; */
+  }
+  #drugstore-acordion {
+    display: flex;
+    /* margin-left: 100px; */
+  }
+  #food-child1 {
+    /* margin-right: 20%; */
+    margin-left: 12%;
+    margin-top: 10%;
+    /* margin-bottom: 20px; */
+  }
+  #kaden-child1 {
+    /* margin-right: 20%; */
+    margin-left: 12%;
+    margin-top: 10%;
+    /* margin-bottom: 20px; */
+  }
+  #fashion-child1 {
+    /* margin-right: 20%; */
+    margin-left: 12%;
+    margin-top: 10%;
+    /* margin-bottom: 20px; */
+  }
+  #drugstore-child1 {
+    /* margin-right: 20%; */
+    margin-left: 12%;
+    margin-top: 10%;
+    /* margin-bottom: 20px; */
+  }
+
+  /*カテゴリ一覧表示*/
+  /* .menu {
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .menu > li {
+    display: inline-block;
+    position: fixed;
+    width: 175px;
+  }
+  .menu > li > ul {
+    display: none;
+  }
+  .menu > li:hover ul {
+    display: block;
+    position: absolute;
+    background-color: white;
+    list-style-type: none;
+  }
+  #category-list {
+    border: ridge 2px;
+  } */
+}
+
+/*スマホ画面*/
+@media screen and (max-width: 520px) {
+  .for-pc {
+    display: none;
+  }
+  .for-tb {
+    display: none;
+  }
+  .for-sp {
+    display: block;
+  }
+
+  #acordion {
+    display: block;
+    text-align: left;
+  }
+  /*footerレイアウト開始*/
+  footer {
+    /*footerの装飾*/
+    width: 100%;
+    height: 6.5vh;
+    justify-content: space-around;
+    background-color: #89c7de;
+    color: #fff;
+    /* text-align: center; */
+    /* padding: 30px; */
+    position: fixed; /*←絶対位置*/
+    bottom: 0; /*下に固定*/
+  }
+  #ul-list-item1 {
+    display: block;
+    position: fixed;
+    margin-left: 8vw;
+    /* margin-right: 5vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 5vw;
+    color: black;
+  }
+  #ul-list-item2 {
+    display: block;
+    position: fixed;
+    margin-left: 40vw;
+    /* margin-right: 20vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 5vw;
+    color: black;
+  }
+  #ul-list-item3 {
+    display: block;
+    position: fixed;
+    margin-left: 67vw;
+    /* margin-right: 3vw; */
+    margin-top: 1.125vh;
+    margin-bottom: 1.125vh;
+    font-size: 5vw;
+    color: black;
+  }
+  .black {
+    color: #000;
+  }
+  /*footerレイアウト終了*/
+
+  .acordion-title {
+    margin-left: 7vw;
+  }
+  .acordion-contents {
+    clear: both;
+    text-align: center;
+  }
+  #shop-pay {
+    width: 75vw;
+  }
+  #shop-mark {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 2vw;
+  }
+  /* 吉野家 */
+  #shop-mark-yosinoya {
+    height: 10vw;
+    margin-left: 4vw;
+    margin-right: 6vw;
+  }
+  /* すき家 */
+  #shop-mark-sukiya {
+    height: 10vw;
+    margin-left: 4vw;
+    margin-right: 7vw;
+  }
+  /* 丸亀製麵 */
+  #shop-mark-marugame {
+    height: 10vw;
+    margin-left: 5vw;
+    margin-right: 7vw;
+  }
+  /* モスバーガー */
+  #shop-mark-mos {
+    height: 10vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  /* エディオン */
+  #shop-mark-ed {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 6vw;
+  }
+  /* 家電 */
+  #shop-mark-kaden {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 3vw;
+  }
+  /* ジョーシン */
+  #shop-mark-joshin {
+    height: 10vw;
+    margin-left: -2vw;
+    margin-right: 3vw;
+  }
+  /* ケーズデンキ */
+  #shop-mark-kz {
+    height: 10vw;
+    margin-left: -2vw;
+    margin-right: 3vw;
+  }
+  /* コジマ */
+  #shop-mark-kozima {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 10vw;
+  }
+  /* GU */
+  #shop-mark-gu {
+    height: 10vw;
+    margin-left: 4vw;
+    margin-right: 7vw;
+  }
+  /* ユニクロ */
+  #shop-mark-yunikuro {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 5vw;
+  }
+  /* H&M */
+  #shop-mark-hm {
+    height: 10vw;
+    margin-left: 3vw;
+    margin-right: 6vw;
+  }
+  /* ライトオン */
+  #shop-mark-right {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 5vw;
+  }
+  /* WEGO */
+  #shop-mark-wego {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 5vw;
+  }
+  /* GAP */
+  #shop-mark-gap {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 8vw;
+  }
+  /* スギ薬局 */
+  #shop-mark-sugi {
+    height: 10vw;
+    margin-left: 3vw;
+    margin-right: 6vw;
+  }
+  /* スギヤマ */
+  #shop-mark-sugiyama {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 9vw;
+  }
+  /* クリエイト、ウエルシア */
+  #shop-mark-other {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 7vw;
+  }
+  /* コスモス */
+  #shop-mark-kosumosu {
+    height: 10vw;
+    margin-left: 6vw;
+    margin-right: 5vw;
+  }
+  /* アコーディオンの文字の配置調整 */
+  #mozi-text {
+    position: relative;
+    top: 1.4vh;
+    left: 2vw;
+  }
+  #shop-mozi {
+    width: 100vw;
+    font-size: 7vw;
+    padding: 0.5em 1em;
+    margin: 1em 0;
+    color: #5d627b;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  }
+}
