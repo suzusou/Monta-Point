@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, getDoc, doc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // MontaPointのFirebaseの情報
 const firebaseConfig = {
@@ -27,9 +27,10 @@ var localSearch_pay = [];
 
 // 決済先生 住所登録の全ての情報を取得
 async function a() {
+  let area = window.globalData.address;
   const shot = await getDocs(collection(db, "決済先生 住所登録"));
   shot.forEach((doc1) => {
-    if (doc1.data().address.indexOf(area2) !== -1 && (area2 !== "名古屋市" || doc1.data().address.indexOf("区") === -1)) {
+    if (doc1.data().address.indexOf(area) !== -1 && (area !== "名古屋市" || doc1.data().address.indexOf("区") === -1)) {
       console.log(doc1.id, "=>", doc1.data().pay, doc1.data().address);
     storeData.push(doc1.id);
     addressData.push(doc1.data().address);
@@ -37,17 +38,16 @@ async function a() {
   }
   })
 
-  const shot2 = await getDocs(collection(db, "決済先生"));
-  shot2.forEach((doc1) => {
+  const shot2 = await getDoc(doc(db, "決済先生", area));
     
-    for (let key in doc1.data()) {
+    for (let key in shot2.data()) {
 
       localSearch_store.push(key);
-      localSearch_pay.push(doc1.data()[key]);
+      localSearch_pay.push(shot2.data()[key]);
 
     }
 
-  })
+
 
   console.log("storeData: " + storeData);
   console.log("addressData: " + addressData);
