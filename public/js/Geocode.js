@@ -84,6 +84,23 @@ function geol_showResult(result) {
       }
     } catch (e) {
       console.log("a" + e);
+      setTimeout(function () {
+        ac_code = result.Feature[0].Property.AddressElement[1].Code;
+
+        var address = result.Feature[0].Property.AddressElement[1].Name;
+        console.log(address);
+        str = address.replace(/(.*郡)(.*[町村])/, '$2');
+        console.log(str);
+        if (window.globalData.address != str) {
+          window.globalData.address = str;
+          if (boola) {
+            delete_marker();
+            window.globalData.a();
+          } else {
+            boolb = false;
+          }
+        }
+      }, 1000) 
     }
 
 
