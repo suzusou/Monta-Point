@@ -248,7 +248,8 @@ function callJSONP_localSearch(url_localSearch) {
   }
 
 }
-
+var marker_localSearch = [];
+var infoWindow_localSearch = [];
 //JSONPの結果として実行される関数
 function showResult_localSearch(result) {
 
@@ -260,7 +261,12 @@ function showResult_localSearch(result) {
 
     latLang_localSearch = new google.maps.LatLng(Number(splitLatLng_localSearch[1]), Number(splitLatLng_localSearch[0]));
 
-    var marker_localSearch = new google.maps.Marker({
+    // var marker_localSearch = new google.maps.Marker({
+    //   map: map,           //表示している地図を指定する
+    //   position: latLang_localSearch, //マーカーの表示位置を設定する
+    //   title: titleInfo_localSearch,
+    // });
+    marker_localSearch[window.globalData.localSearch_count] = new google.maps.Marker({
       map: map,           //表示している地図を指定する
       position: latLang_localSearch, //マーカーの表示位置を設定する
       title: titleInfo_localSearch,
@@ -313,26 +319,42 @@ function showResult_localSearch(result) {
           break;
       }
     }
-
-    var infoWindow_localSearch = new google.maps.InfoWindow({
-
+    infoWindow_localSearch[window.globalData.localSearch_count] = new google.maps.InfoWindow({
       content: content_localSearch
-
     });
 
-    marker_localSearch.addListener('mouseover', function (e) {
+    for (let i = 0; i <= window.globalData.localSearch_count; i++) {
+      if (marker_localSearch[i] != null) {
 
-      // console.log(marker[int].title);
-      infoWindow_localSearch.open(map, marker_localSearch);
+        marker_localSearch[i].addListener('mouseover', function (e) {
+          infoWindow_localSearch[i].open(map, marker_localSearch[i]);
+        });
 
-    });
+        marker_localSearch[i].addListener('mouseout', function (e) {
+          infoWindow_localSearch[i].close(map, marker_localSearch[i]);
+        });
+      }
+    }
 
-    marker_localSearch.addListener('mouseout', function (e) {
+    // var infoWindow_localSearch = new google.maps.InfoWindow({
 
-      // console.log(marker[int].title);
-      infoWindow_localSearch.close(map, marker_localSearch)
+    //   content: content_localSearch
 
-    });
+    // });
+
+    // marker_localSearch.addListener('mouseover', function (e) {
+
+    //   console.log(marker[int].title);
+    //   infoWindow_localSearch.open(map, marker_localSearch);
+
+    // });
+
+    // marker_localSearch.addListener('mouseout', function (e) {
+
+    //   console.log(marker[int].title);
+    //   infoWindow_localSearch.close(map, marker_localSearch)
+
+    // });
 
   } else {
 
@@ -343,7 +365,7 @@ function showResult_localSearch(result) {
 
   // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
 
-  if (window.globalData.localSearch_count < window.globalData.localSearch_store.length - 1) {
+  if (window.globalData.localSearch_count < 50) {
     window.globalData.localSearch_count++;
 
     showAddress_localSearch();
@@ -407,8 +429,22 @@ var btns = Array.from(search);
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    showAddressZoom();
-    window.globalData.a();
+    // showAddressZoom();
+    // window.globalData.a();
+    delete_marker();
   });
 })
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
+
+function delete_marker() {
+  console.log(infoWindow_localSearch);
+  console.log(marker_localSearch);
+  for (var i = 0; i < marker_localSearch.length; i++) {
+    if (marker_localSearch[i] != null) {
+      marker_localSearch[i].setMap(null);
+    }
+  }
+  marker_localSearch = [];
+  infoWindow_localSearch = [];
+  console.log(marker_localSearch);
+}
