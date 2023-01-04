@@ -60,10 +60,15 @@ var str = "";
 var str1 = "";
 var str2 = "";
 
+var ac_code = "";
+
 function geol_showResult(result) {
 
   if (result.ResultInfo.Count > 0) {
     try {
+
+      ac_code = result.Feature[0].Property.AddressElement[1].Code;
+
       var address = result.Feature[0].Property.AddressElement[1].Name;
       console.log(address);
       str = address.replace(/(.*郡)(.*[町村])/, '$2');
@@ -97,7 +102,7 @@ function showAddress() {
   // if (window.globalData.count == 0) {
   //   console.time("count")
   // }
-  var url = "https://map.yahooapis.jp/geocode/V1/geoCoderV1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(window.globalData.addressData[window.globalData.count]) + "&output=json&callback=showResult";
+  var url = "https://map.yahooapis.jp/geocode/V1/geoCoderV1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(window.globalData.addressData[window.globalData.count]) + "&ac=" + ac_code + "&output=json&callback=showResult";
   callJSONP(url);
 }
 
@@ -230,7 +235,7 @@ var boolb = true;
 function showAddress_localSearch() {
   boola = false;
   var query_localSearch = window.globalData.localSearch_store[window.globalData.localSearch_count];
-  var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&output=json&callback=showResult_localSearch&results=1&ac=23";
+  var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&ac=" + ac_code + "&output=json&callback=showResult_localSearch&results=1";
   callJSONP_localSearch(url_localSearch);
 
 }
@@ -392,7 +397,7 @@ function showAddressZoom() {
 
   var querySearch = document.getElementById('search-box').value;
 
-  var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(querySearch) + "&output=json&callback=execFitBounds&results=1&ac=23";
+  var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(querySearch) + "&output=json&callback=execFitBounds&results=1&ac=" + ac_code;
   callJSONP_Search(urlSearch);
 
 }
