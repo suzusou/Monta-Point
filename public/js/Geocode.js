@@ -70,8 +70,12 @@ function geol_showResult(result) {
       console.log(str);
       if (window.globalData.address != str) {
         window.globalData.address = str;
-        console.time("count");
-        window.globalData.a();
+        if (boola) {
+          delete_marker();
+          window.globalData.a();
+        } else {
+          boolb = false;
+        }
       }
     } catch (e) {
       console.log("a" + e);
@@ -184,7 +188,7 @@ function showResult(result) {
     });
     for (let i = 0; i <= window.globalData.count; i++) {
       if (marker[i] != null) {
-        
+
         marker[i].addListener('mouseover', function (e) {
           infoWindow[i].open(map, marker[i]);
         });
@@ -218,8 +222,13 @@ function showResult(result) {
 
 var miss_localSearch = [];
 
+var boola = true;
+
+var boolb = true;
+
 //住所を表示する
 function showAddress_localSearch() {
+  boola = false;
   var query_localSearch = window.globalData.localSearch_store[window.globalData.localSearch_count];
   var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&output=json&callback=showResult_localSearch&results=1&ac=23";
   callJSONP_localSearch(url_localSearch);
@@ -359,17 +368,21 @@ function showResult_localSearch(result) {
   }
 
   // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
+  if (boolb) {
+    if (window.globalData.localSearch_count < 50) {
+      window.globalData.localSearch_count++;
 
-  if (window.globalData.localSearch_count < 50) {
-    window.globalData.localSearch_count++;
+      showAddress_localSearch();
 
-    showAddress_localSearch();
 
+    } else {
+      boola = true;
+      console.log("検索に引っかからなかったのは　:　" + miss_localSearch)
+    }
   } else {
-
-    console.log("検索に引っかからなかったのは　:　" + miss_localSearch)
-    console.timeEnd("count");
-
+    delete_marker()
+    boolb = true;
+    window.globalData.a();
   }
 
 }
