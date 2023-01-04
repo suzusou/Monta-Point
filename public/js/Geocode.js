@@ -70,6 +70,7 @@ function geol_showResult(result) {
       console.log(str);
       if (window.globalData.address != str) {
         window.globalData.address = str;
+        console.time("count");
         window.globalData.a();
       }
     } catch (e) {
@@ -218,14 +219,13 @@ function showResult(result) {
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 以下localSearch
 
-var count_localSearch = 0;
+// var count_localSearch = 0;
 
 var miss_localSearch = [];
 
 //住所を表示する
 function showAddress_localSearch() {
-
-  var query_localSearch = window.globalData.localSearch_store[count_localSearch];
+  var query_localSearch = window.globalData.localSearch_store[window.globalData.localSearch_count];
   var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&output=json&callback=showResult_localSearch&results=1&ac=23";
   callJSONP_localSearch(url_localSearch);
 
@@ -240,7 +240,7 @@ function callJSONP_localSearch(url_localSearch) {
   target_localSearch.id = 'pin';
   document.body.appendChild(target_localSearch);
   // scriptタグをたまりすぎるのを防ぐ
-  if (count_localSearch % 100 == 0 && count_localSearch != 0) {
+  if (window.globalData.localSearch_count % 100 == 0 && window.globalData.localSearch_count != 0) {
     console.log("削除します");
     for (let a = 0; a < 100; a++) {
       document.getElementById('pin').remove();
@@ -266,7 +266,7 @@ function showResult_localSearch(result) {
       title: titleInfo_localSearch,
     });
 
-    var paySplit_localSearch = window.globalData.localSearch_pay[count_localSearch].split(',');
+    var paySplit_localSearch = window.globalData.localSearch_pay[window.globalData.localSearch_count].split(',');
 
     var content_localSearch = "";
 
@@ -336,21 +336,22 @@ function showResult_localSearch(result) {
 
   } else {
 
-    miss_localSearch.push(window.globalData.localSearch_store[count_localSearch]);
-    console.log(window.globalData.localSearch_store[count_localSearch] + " :" + count_localSearch);
+    miss_localSearch.push(window.globalData.localSearch_store[window.globalData.localSearch_count]);
+    console.log(window.globalData.localSearch_store[window.globalData.localSearch_count] + " :" + window.globalData.localSearch_count);
 
   }
 
   // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
 
-  if (count_localSearch < 50) {
-    count_localSearch++;
+  if (window.globalData.localSearch_count < window.globalData.localSearch_store.length - 1) {
+    window.globalData.localSearch_count++;
 
     showAddress_localSearch();
 
   } else {
 
     console.log("検索に引っかからなかったのは　:　" + miss_localSearch)
+    console.timeEnd("count");
 
   }
 

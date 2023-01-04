@@ -17,42 +17,56 @@ const app = initializeApp(firebaseConfig);
 // Firestoreを取得
 const db = getFirestore(app);
 
-var storeData = [];
-var addressData = [];
-var payData = [];
-var count = -1;
+let storeData = [];
+let addressData = [];
+let payData = [];
+let count = 0;
 
-var localSearch_store = [];
-var localSearch_pay = [];
+let localSearch_store = [];
+let localSearch_pay = [];
 
 // 決済先生 住所登録の全ての情報を取得
 async function a() {
+  storeData = [];
+  addressData = [];
+  payData = [];
+  count = 0;
+
+  localSearch_store = [];
+  localSearch_pay = [];
   let area = window.globalData.address;
   const shot = await getDocs(collection(db, "決済先生 住所登録"));
   shot.forEach((doc1) => {
     if (doc1.data().address.indexOf(area) !== -1 && (area !== "名古屋市" || doc1.data().address.indexOf("区") === -1)) {
       console.log(doc1.id, "=>", doc1.data().pay, doc1.data().address);
-    storeData.push(doc1.id);
-    addressData.push(doc1.data().address);
-    payData.push(doc1.data().pay);
-  }
+      storeData.push(doc1.id);
+      addressData.push(doc1.data().address);
+      payData.push(doc1.data().pay);
+    }
   })
 
   const shot2 = await getDoc(doc(db, "決済先生", area));
-    
-    for (let key in shot2.data()) {
+  let aa = 0;
+  for (let key in shot2.data()) {
+    aa++
+    localSearch_store.push(key);
+    localSearch_pay.push(shot2.data()[key]);
 
-      localSearch_store.push(key);
-      localSearch_pay.push(shot2.data()[key]);
-
-    }
-
-
+  }
+  console.log("count：" + aa)
 
   console.log("storeData: " + storeData);
   console.log("addressData: " + addressData);
   console.log("payData: " + payData);
   console.log("addressData.length: " + addressData.length);
+
+  window.globalData.addressData = addressData;
+  window.globalData.payData = payData;
+  window.globalData.count = count;
+
+  window.globalData.localSearch_count = count;
+  window.globalData.localSearch_store = localSearch_store;
+  window.globalData.localSearch_pay = localSearch_pay;
 
   // setInterval(function () {
   //   showAddress();
@@ -65,8 +79,9 @@ async function a() {
   // }, 1000)
 
   // var tid = setInterval(function () {
-  window.globalData.count++;
-  showAddress();
+  if (window.globalData.addressData.length > 0) {
+    showAddress();
+  }
   showAddress_localSearch();
   console.log(window.globalData.count);
   //   if (window.globalData.count >= addressData.length - 1) {
@@ -104,6 +119,7 @@ window.globalData.addressData = addressData;
 window.globalData.payData = payData;
 window.globalData.count = count;
 
+window.globalData.localSearch_count = count;
 window.globalData.localSearch_store = localSearch_store;
 window.globalData.localSearch_pay = localSearch_pay;
 
