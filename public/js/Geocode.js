@@ -100,7 +100,7 @@ function geol_showResult(result) {
             boolb = false;
           }
         }
-      }, 1000) 
+      }, 1000)
     }
 
 
@@ -264,7 +264,11 @@ function callJSONP_localSearch(url_localSearch) {
   target_localSearch.charset = 'utf-8';
   target_localSearch.src = url_localSearch;
   target_localSearch.id = 'pin';
-  document.body.appendChild(target_localSearch);
+  try {
+    document.body.appendChild(target_localSearch);
+  } catch (e) {
+    console.log("CORBが発生しました。")
+  }
   // scriptタグをたまりすぎるのを防ぐ
   if (window.globalData.localSearch_count % 100 == 0 && window.globalData.localSearch_count != 0) {
     console.log("削除します");
@@ -372,7 +376,7 @@ function showResult_localSearch(result) {
 
   // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
   if (boolb) {
-    if (window.globalData.localSearch_count < 50) {
+    if (window.globalData.localSearch_count < window.globalData.localSearch_store.length - 1) {
       window.globalData.localSearch_count++;
 
       showAddress_localSearch();
