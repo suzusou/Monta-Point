@@ -106,7 +106,8 @@ function callJSONP(url) {
   document.body.appendChild(target);
 
 }
-
+var marker = [];
+var infoWindow = [];
 //JSONPの結果として実行される関数
 function showResult(result) {
 
@@ -173,32 +174,26 @@ function showResult(result) {
 
     YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
 
-    var marker = new google.maps.Marker({
+    marker[window.globalData.count] = new google.maps.Marker({
       map: map,           //表示している地図を指定する
       position: YahooLatLng, //マーカーの表示位置を設定する
       title: titleInfo,
     });
-
-    var infoWindow = new google.maps.InfoWindow({
-
+    infoWindow[window.globalData.count] = new google.maps.InfoWindow({
       content: content
-
     });
+    for (let i = 0; i <= window.globalData.count; i++) {
+      if (marker[i] != null) {
+        
+        marker[i].addListener('mouseover', function (e) {
+          infoWindow[i].open(map, marker[i]);
+        });
 
-    marker.addListener('mouseover', function (e) {
-
-      // console.log(marker[int].title);
-      infoWindow.open(map, marker);
-
-    });
-
-    marker.addListener('mouseout', function (e) {
-
-      // console.log(marker[int].title);
-      infoWindow.close(map, marker);
-
-    });
-
+        marker[i].addListener('mouseout', function (e) {
+          infoWindow[i].close(map, marker[i]);
+        });
+      }
+    }
 
   } else {
 
@@ -437,8 +432,6 @@ btns.forEach(function (btn) {
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 function delete_marker() {
-  console.log(infoWindow_localSearch);
-  console.log(marker_localSearch);
   for (var i = 0; i < marker_localSearch.length; i++) {
     if (marker_localSearch[i] != null) {
       marker_localSearch[i].setMap(null);
@@ -446,5 +439,12 @@ function delete_marker() {
   }
   marker_localSearch = [];
   infoWindow_localSearch = [];
+  for (var i = 0; i < marker.length; i++) {
+    if (marker[i] != null) {
+      marker[i].setMap(null);
+    }
+  }
+  marker = [];
+  infoWindow = [];
   console.log(marker_localSearch);
 }
