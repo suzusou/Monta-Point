@@ -345,25 +345,6 @@ function showResult_localSearch(result) {
       }
     }
 
-    // var infoWindow_localSearch = new google.maps.InfoWindow({
-
-    //   content: content_localSearch
-
-    // });
-
-    // marker_localSearch.addListener('mouseover', function (e) {
-
-    //   console.log(marker[int].title);
-    //   infoWindow_localSearch.open(map, marker_localSearch);
-
-    // });
-
-    // marker_localSearch.addListener('mouseout', function (e) {
-
-    //   console.log(marker[int].title);
-    //   infoWindow_localSearch.close(map, marker_localSearch)
-
-    // });
 
   } else {
 
@@ -442,9 +423,7 @@ var btns = Array.from(search);
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function () {
-    // showAddressZoom();
-    // window.globalData.a();
-    delete_marker();
+    showAddressZoom();
   });
 })
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
