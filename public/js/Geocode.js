@@ -85,20 +85,24 @@ function geol_showResult(result) {
     } catch (e) {
       console.log("a" + e);
       setTimeout(function () {
-        ac_code = result.Feature[0].Property.AddressElement[1].Code;
+        try {
+          ac_code = result.Feature[0].Property.AddressElement[1].Code;
 
-        var address = result.Feature[0].Property.AddressElement[1].Name;
-        console.log(address);
-        str = address.replace(/(.*郡)(.*[町村])/, '$2');
-        console.log(str);
-        if (window.globalData.address != str) {
-          window.globalData.address = str;
-          if (boola) {
-            delete_marker();
-            window.globalData.a();
-          } else {
-            boolb = false;
+          var address = result.Feature[0].Property.AddressElement[1].Name;
+          console.log(address);
+          str = address.replace(/(.*郡)(.*[町村])/, '$2');
+          console.log(str);
+          if (window.globalData.address != str) {
+            window.globalData.address = str;
+            if (boola) {
+              delete_marker();
+              window.globalData.a();
+            } else {
+              boolb = false;
+            }
           }
+        } catch (e) {
+          console.log("海を逸脱しました。");
         }
       }, 1000)
     }
@@ -267,7 +271,7 @@ function callJSONP_localSearch(url_localSearch) {
   try {
     document.body.appendChild(target_localSearch);
   } catch (e) {
-    console.log("CORBが発生しました。")
+    console.log("CORBが発生しました。");
   }
   // scriptタグをたまりすぎるのを防ぐ
   if (window.globalData.localSearch_count % 100 == 0 && window.globalData.localSearch_count != 0) {
