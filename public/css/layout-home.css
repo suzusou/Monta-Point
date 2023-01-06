@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "M PLUS Rounded 1c";
   user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -31,7 +32,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 /*PC画面*/
-@media screen and (max-width: 1280px) {
+@media screen and (min-width: 961px) {
   .for-pc {
     display: block;
   }
@@ -46,7 +47,7 @@ summary::-webkit-details-marker {
     width: 100%;
     padding: 15px 0;
     justify-content: space-around;
-    background-color: aqua;
+    background-color: #fee199;
     color: black;
     /* position: fixed; */
   }
@@ -70,6 +71,7 @@ summary::-webkit-details-marker {
     list-style: none;
     display: inline-block;
     margin-left: 25px;
+    font-weight: 500;
     /* position: fixed; */
   }
 
@@ -81,30 +83,6 @@ summary::-webkit-details-marker {
     user-select: none;
     z-index: 10;
   }
-
-  /*カテゴリ一覧表示*/
-  /* .menu {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .menu > li {
-    display: inline-block;
-    position: fixed;
-    width: 175px;
-  }
-  .menu > li > ul {
-    display: none;
-  }
-  .menu > li:hover ul {
-    display: block;
-    position: absolute;
-    background-color: white;
-    list-style-type: none;
-  }
-  #category-list {
-    border: ridge 2px;
-  } */
   .black {
     color: #000;
   }
@@ -119,6 +97,7 @@ summary::-webkit-details-marker {
   #shop-mozi1 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: 10vh;
@@ -135,6 +114,7 @@ summary::-webkit-details-marker {
   #shop-mozi2 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: 10vh;
@@ -150,6 +130,7 @@ summary::-webkit-details-marker {
   #shop-mozi3 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: 10vh;
@@ -166,6 +147,7 @@ summary::-webkit-details-marker {
   #shop-mozi4 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: -12vh;
@@ -182,6 +164,7 @@ summary::-webkit-details-marker {
   #shop-mozi5 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: -12vh;
@@ -196,6 +179,7 @@ summary::-webkit-details-marker {
   #shop-mozi6 {
     width: 30vw;
     font-size: 2vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-top: -12vh;
@@ -247,44 +231,64 @@ summary::-webkit-details-marker {
   /* アコーディオンの文字の配置調整 */
   #mozi-text {
     position: relative;
-    top: 1.8vh;
+    top: 10px;
     left: 0.8vw;
   }
 
+  #tb-title {
+    font-size: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
   /* ハンバーガーメニューレイアウト */
   .wrapper {
-    position: relative;
+    position: absolute;
     background: #f5f5f5;
   }
   .help {
     list-style: none;
     display: block;
-
     margin-right: 25px;
   }
-  i {
-    font-size: 2vw;
+  #icon-mark {
+    font-size: 30px;
   }
   /* ハンバーガーメニュー */
   #hanbur-title {
-    font-size: 3vw;
-    margin-left: 3vw;
+    font-size: 5vw;
+    margin-left: 26vw;
+    font-weight: bold;
+    border-bottom: 5px dashed dimgrey;
   }
   #sub-title {
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  ol {
     font-size: 2vw;
+    margin-left: 2vw;
+  }
+  #shop-explain {
+    width: 55vw;
+    /* margin-left: 12vw; */
   }
   .hamburger {
+    display: inline-block;
     width: 30px;
     height: 30px;
-    background: aqua;
-    padding: 10px;
-    display: flex;
+    background-color: #fee199;
+    /* padding: 10px; */
+    position: fixed;
+    top: 15px;
+    left: 90vw;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    left: 92vw;
-    top: -7vh;
-    z-index: 999;
+    z-index: 100;
   }
   .hamburger:hover {
     cursor: pointer;
@@ -316,23 +320,30 @@ summary::-webkit-details-marker {
   }
   /* メニュー */
   .menu {
-    width: 50vw;
+    width: 100vw;
     height: 100vh;
-    background: #fff;
+    background: #fff5ee;
     color: black;
-    position: absolute;
-    padding-top: 40px;
-    padding-left: 5vw;
-    transform: translate(3000px);
+    position: fixed;
+    top: 60px;
+    padding-top: 0px;
+    padding-left: 8vw;
+    transform: translate(100vw);
     transition: 0.3s ease-out;
+    display: none;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
   }
   li {
     margin-bottom: 10px;
   }
   /* メニューにopenクラスがついたときのスタイル */
   .menu.open {
-    transform: translate(50vw);
+    transform: translate(0vw);
     transition: 0.3s ease-out;
+    display: block;
+    overflow: scroll;
   }
 }
 /*960px画面*/
@@ -346,6 +357,134 @@ summary::-webkit-details-marker {
   .for-sp {
     display: none;
   }
+  /* ヘッダーレイアウト */
+  #header {
+    position: fixed;
+    height: 60px;
+    width: 100vw;
+    /* padding: 15px 0; */
+    background-color: #fee199;
+    display: flex;
+    color: black;
+    z-index: 1000;
+  }
+  #title-icon {
+    font-size: 40px;
+  }
+  /* header#header-all {
+    position: relative;
+  } */
+  #tb-title {
+    font-size: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* ハンバーガーメニューレイアウト */
+  .wrapper {
+    position: absolute;
+    background: #f5f5f5;
+  }
+  .help {
+    list-style: none;
+    display: block;
+    margin-right: 25px;
+  }
+  #icon-mark {
+    font-size: 30px;
+  }
+  /* ハンバーガーメニュー */
+  #hanbur-title {
+    font-size: 7vw;
+    margin-left: 21vw;
+    font-weight: bold;
+    border-bottom: 5px dashed dimgrey;
+  }
+  #sub-title {
+    font-size: 5vw;
+    font-weight: bold;
+  }
+  ol {
+    font-size: 4vw;
+    margin-left: 7vw;
+  }
+  #shop-explain {
+    width: 75vw;
+    margin-left: 5vw;
+  }
+  .hamburger {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fee199;
+    /* padding: 10px; */
+    position: fixed;
+    top: 15px;
+    left: 90vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .hamburger:hover {
+    cursor: pointer;
+  }
+  .hamburger span {
+    background: #fff;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s ease-out;
+  }
+  .hamburger span:nth-of-type(1) {
+    top: 15px;
+  }
+  .hamburger span:nth-of-type(3) {
+    bottom: 15px;
+  }
+  /* ハンバーガーメニューにactiveクラスがついたときのスタイル */
+  .hamburger.active span:nth-of-type(1) {
+    transform: translateY(9px) rotate(-45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(3) {
+    transform: translateY(-9px) rotate(45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  /* メニュー */
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    background: #fff5ee;
+    color: black;
+    position: fixed;
+    top: 60px;
+    padding-top: 0px;
+    padding-left: 8vw;
+    transform: translate(100vw);
+    transition: 0.3s ease-out;
+    display: none;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  /* メニューにopenクラスがついたときのスタイル */
+  .menu.open {
+    transform: translate(0vw);
+    transition: 0.3s ease-out;
+    display: block;
+    overflow: scroll;
+  }
+
   #shop-mark {
     height: 6vw;
     float: left;
@@ -353,6 +492,7 @@ summary::-webkit-details-marker {
   #shop-mozi1 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-bottom: 190px;
@@ -368,6 +508,7 @@ summary::-webkit-details-marker {
   #shop-mozi2 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
     margin-bottom: 190px;
@@ -383,9 +524,10 @@ summary::-webkit-details-marker {
   #shop-mozi3 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
-    margin-top: -10vh;
+    margin-top: -11vh;
     margin-bottom: 190px;
 
     margin-left: 6vw;
@@ -399,11 +541,11 @@ summary::-webkit-details-marker {
   #shop-mozi4 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
-    margin-top: -10vh;
+    margin-top: -11vh;
     margin-bottom: 190px;
-
     margin-left: 4vw;
     margin-right: 6vw;
     /* margin-left: -120px; */
@@ -416,9 +558,10 @@ summary::-webkit-details-marker {
   #shop-mozi5 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
-    margin-top: -10vh;
+    margin-top: -11vh;
     margin-bottom: 190px;
     margin-left: 6vw;
     color: #5d627b;
@@ -430,9 +573,10 @@ summary::-webkit-details-marker {
   #shop-mozi6 {
     width: 42vw;
     font-size: 3vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1.5em 0;
-    margin-top: -10vh;
+    margin-top: -11vh;
     margin-bottom: 190px;
     margin-left: 4vw;
     margin-right: 6vw;
@@ -481,151 +625,64 @@ summary::-webkit-details-marker {
   /* アコーディオンの文字の配置調整 */
   #mozi-text {
     position: relative;
-    top: 1.2vh;
+    top: 10px;
     left: 0.8vw;
   }
 
   /*footerレイアウト開始*/
   footer {
     /*footerの装飾*/
-    width: 100%;
-    height: 6.5vh;
+    width: 100vw;
+    height: 50px;
     justify-content: space-around;
-    background-color: #89c7de;
+    background-color: #fee199;
     color: #fff;
+    display: flex;
     /* text-align: center; */
     /* padding: 30px; */
     position: fixed; /*←絶対位置*/
     bottom: 0; /*下に固定*/
+    z-index: 1000;
   }
-  #ul-list-item1 {
-    display: block;
+
+  .nav-list {
+    /* line-height: 0px; */
+    /* float: left; */
+    text-align: center;
+    vertical-align: middle;
+    /* justify-content: space-around; */
     position: fixed;
-    margin-left: 10vw;
-    /* margin-right: 5vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 1.5em;
+    margin-top: 4px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px;
+    font-weight: 900;
+    list-style: none;
   }
-  #ul-list-item2 {
-    display: block;
-    position: fixed;
-    margin-left: 40vw;
-    /* margin-right: 20vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 1.5em;
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: space-around;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000;
   }
-  #ul-list-item3 {
-    display: block;
-    position: fixed;
-    margin-left: 67vw;
-    /* margin-right: 3vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 1.5em;
+  #footer-icon {
+    font-size: 25px;
   }
   .black {
     color: #000;
   }
   /*footerレイアウト終了*/
 
-  /* 検索レイアウト */
-  #search-all {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-    outline: 0;
-  }
-  #search-box {
-    position: absolute;
-    right: 15%;
-    width: 27%;
-    height: 5%;
-    border-radius: 10px;
-    top: 9px;
-    position: fixed; /*←絶対位置*/
-  }
-  #search-submit {
-    position: absolute;
-    right: 5%;
-    width: 9%;
-    height: 5%;
-    top: 9px;
-    font-weight: bold;
-    border-radius: 10px;
-    background-color: blue;
-    position: fixed; /*←絶対位置*/
-  }
-
   a {
     text-decoration: none;
   }
-
-  #food-acordion {
-    display: flex;
-    /* margin-left: 100px; */
-  }
-  #kaden-acordion {
-    display: flex;
-    /* margin-left: 100px; */
-  }
-  #fashion-acordion {
-    display: flex;
-    /* margin-left: 100px; */
-  }
-  #drugstore-acordion {
-    display: flex;
-    /* margin-left: 100px; */
-  }
-  #food-child1 {
-    /* margin-right: 20%; */
-    margin-left: 12%;
-    margin-top: 10%;
-    /* margin-bottom: 20px; */
-  }
-  #kaden-child1 {
-    /* margin-right: 20%; */
-    margin-left: 12%;
-    margin-top: 10%;
-    /* margin-bottom: 20px; */
-  }
-  #fashion-child1 {
-    /* margin-right: 20%; */
-    margin-left: 12%;
-    margin-top: 10%;
-    /* margin-bottom: 20px; */
-  }
-  #drugstore-child1 {
-    /* margin-right: 20%; */
-    margin-left: 12%;
-    margin-top: 10%;
-    /* margin-bottom: 20px; */
-  }
-
-  /*カテゴリ一覧表示*/
-  /* .menu {
-    list-style-type: none;
-    display: inline-block;
-    vertical-align: top;
-  }
-  .menu > li {
-    display: inline-block;
-    position: fixed;
-    width: 175px;
-  }
-  .menu > li > ul {
-    display: none;
-  }
-  .menu > li:hover ul {
-    display: block;
-    position: absolute;
-    background-color: white;
-    list-style-type: none;
-  }
-  #category-list {
-    border: ridge 2px;
-  } */
 }
 
 /*スマホ画面*/
@@ -639,66 +696,202 @@ summary::-webkit-details-marker {
   .for-sp {
     display: block;
   }
+  /* ヘッダーレイアウト */
+  #header {
+    position: fixed;
+    height: 60px;
+    width: 100vw;
+    /* padding: 15px 0; */
+    background-color: #fee199;
+    display: flex;
+    color: black;
+    z-index: 1000;
+  }
+  #title-icon {
+    font-size: 40px;
+  }
+  /* header#header-all {
+      position: relative;
+    } */
+  #tb-title {
+    font-size: 35px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #kategori {
+    margin-top: -50px;
+    margin-left: 9px;
+    float: left;
+    padding: 1rem 2rem;
+    border-left: 5px solid #000;
+    background: #f4f4f4;
+    user-select: none;
+  }
+
+  /* ハンバーガーメニューレイアウト */
+  .wrapper {
+    position: absolute;
+    background: #f5f5f5;
+  }
+  .help {
+    list-style: none;
+    display: block;
+    margin-right: 25px;
+  }
+  #icon-mark {
+    font-size: 30px;
+  }
+  /* ハンバーガーメニュー */
+  #hanbur-title {
+    font-size: 8vw;
+    margin-left: 21vw;
+    font-weight: bold;
+    border-bottom: 5px dashed dimgrey;
+  }
+  #sub-title {
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  ol {
+    font-size: 4vw;
+    font-weight: 500;
+    margin-left: 7vw;
+  }
+  #shop-explain {
+    width: 75vw;
+    margin-left: 5vw;
+  }
+  .hamburger {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fee199;
+    /* padding: 10px; */
+    position: fixed;
+    top: 15px;
+    left: 85vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  .hamburger:hover {
+    cursor: pointer;
+  }
+  .hamburger span {
+    background: #fff;
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    transition: 0.3s ease-out;
+  }
+  .hamburger span:nth-of-type(1) {
+    top: 15px;
+  }
+  .hamburger span:nth-of-type(3) {
+    bottom: 15px;
+  }
+  /* ハンバーガーメニューにactiveクラスがついたときのスタイル */
+  .hamburger.active span:nth-of-type(1) {
+    transform: translateY(9px) rotate(-45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(3) {
+    transform: translateY(-9px) rotate(45deg);
+    transition: 0.3s ease-out;
+  }
+  .hamburger.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  /* メニュー */
+  .menu {
+    width: 100vw;
+    height: 100vh;
+    background: #fff5ee;
+    color: black;
+    position: fixed;
+    top: 60px;
+    padding-top: 0px;
+    padding-left: 8vw;
+    transform: translate(100vw);
+    transition: 0.3s ease-out;
+    display: none;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+    z-index: 100;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  /* メニューにopenクラスがついたときのスタイル */
+  .menu.open {
+    transform: translate(0vw);
+    transition: 0.3s ease-out;
+    display: block;
+    overflow: scroll;
+  }
 
   #acordion {
     display: block;
     text-align: left;
   }
   /*footerレイアウト開始*/
+
   footer {
     /*footerの装飾*/
-    width: 100%;
-    height: 6.5vh;
+    width: 100vw;
+    height: 50px;
     justify-content: space-around;
-    background-color: #89c7de;
+    background-color: #fee199;
     color: #fff;
+    display: flex;
     /* text-align: center; */
     /* padding: 30px; */
     position: fixed; /*←絶対位置*/
     bottom: 0; /*下に固定*/
+    z-index: 1000;
   }
-  #ul-list-item1 {
-    display: block;
+
+  .nav-list {
+    /* line-height: 0px; */
+    /* float: left; */
+    text-align: center;
+    vertical-align: middle;
+    /* justify-content: space-around; */
     position: fixed;
-    margin-left: 8vw;
-    /* margin-right: 5vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 5vw;
-    color: black;
+    margin-top: 13px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: 900;
+    list-style: none;
   }
-  #ul-list-item2 {
-    display: block;
-    position: fixed;
-    margin-left: 40vw;
-    /* margin-right: 20vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 5vw;
-    color: black;
+  .nav-list-item {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    justify-content: space-around;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    color: #000;
   }
-  #ul-list-item3 {
-    display: block;
-    position: fixed;
-    margin-left: 67vw;
-    /* margin-right: 3vw; */
-    margin-top: 1.125vh;
-    margin-bottom: 1.125vh;
-    font-size: 5vw;
-    color: black;
+  #footer-icon {
+    font-size: 15px;
   }
   .black {
     color: #000;
   }
   /*footerレイアウト終了*/
 
-  .acordion-title {
-    margin-left: 7vw;
-  }
-  .acordion-contents {
-    clear: both;
-    text-align: center;
-  }
   #shop-pay {
     width: 75vw;
   }
@@ -825,17 +1018,25 @@ summary::-webkit-details-marker {
   /* アコーディオンの文字の配置調整 */
   #mozi-text {
     position: relative;
-    top: 1.4vh;
+    top: 8px;
     left: 2vw;
   }
   #shop-mozi {
     width: 100vw;
     font-size: 7vw;
+    font-weight: 500;
     padding: 0.5em 1em;
     margin: 1em 0;
     color: #5d627b;
     background: white;
     border-top: solid 5px #5d627b;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
+  }
+  .acordion-title {
+    margin-left: 7vw;
+  }
+  .acordion-contents {
+    clear: both;
+    text-align: center;
   }
 }

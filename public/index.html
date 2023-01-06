@@ -8,6 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <link rel="stylesheet" href="css/layout-home.css" />
   </head>
 
@@ -17,7 +18,10 @@
       <!-- header -->
       <header id="header-all">
         <h6 class="headline">
-          <a>決済先生</a>
+          <a
+            ><i id="title-icon" class="fa-solid fa-cash-register"></i>
+            決済先生</a
+          >
         </h6>
         <ul class="nav-list">
           <li class="nav-list-item">
@@ -26,50 +30,76 @@
             >
           </li>
           <li class="nav-list-item">
-            <a href="google_maps.html" class="black"
+            <a href="list.html" class="black"
               ><i class="fa-solid fa-location-dot"></i> 一覧</a
             >
           </li>
           <li class="nav-list-item">
-            <a href="" class="black"
+            <a href="posting.html" class="black"
               ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
             >
           </li>
-          <!--カテゴリー一覧表示-->
-          <!-- <ul class="menu">
-            <li class="nav-list-item">
-              <a href=""><i class="fa-solid fa-list"></i> カテゴリー</a>
-              <ul>
-                <li id="category-list"><a href="#food-jump">飲食店</a></li>
-                <li id="category-list"><a href="#electronic-jump">家電</a></li>
-                <li id="category-list">
-                  <a href="#fashion-jump">ファッション</a>
-                </li>
-                <li id="category-list">
-                  <a href="#drug-jump">ドラッグストア</a>
-                </li>
-              </ul>
-            </li>
-          </ul> -->
         </ul>
         <div class="wrapper" class="help">
           <div class="hamburger">
-            <a><i class="fa-solid fa-circle-info" color="white"></i></a>
+            <a
+              ><i
+                id="icon-mark"
+                class="fa-solid fa-circle-info"
+                color="white"
+              ></i
+            ></a>
           </div>
           <nav class="menu">
-            <b id="hanbur-title">操作説明</b>
-            <ul>
-              <li id="sub-title">ホーム画面</li>
-              <li>メニュー2</li>
-              <li>メニュー3</li>
-              <li>メニュー4</li>
-              <li>メニュー5</li>
-            </ul>
+            <b id="hanbur-title">　操作説明　</b>
+            <br />
+            <br />
+            <div>
+              <ul>
+                <li id="sub-title">ホーム画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>気になった店をタップ(クリック)します</li>
+                <li>使えるポイントと支払方法が表示されます</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">一覧画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">投稿追加画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/add.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
           </nav>
         </div>
       </header>
       <!--header-->
       <!--飲食店１個目-->
+      <br />
       <br />
       <br />
       <br />
@@ -560,9 +590,71 @@
     <!--960px画面-->
     <div class="for-tb">
       <!--飲食店１個目-->
+      <div id="header">
+        <a id="tb-title"
+          ><i id="title-icon" class="fa-solid fa-cash-register"></i> 決済先生</a
+        >
+        <div class="wrapper" class="help">
+          <div class="hamburger">
+            <a
+              ><i
+                id="icon-mark"
+                class="fa-solid fa-circle-info"
+                color="white"
+              ></i
+            ></a>
+          </div>
+          <nav class="menu">
+            <b id="hanbur-title">　操作説明　</b>
+            <br />
+            <br />
+            <div>
+              <ul>
+                <li id="sub-title">ホーム画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>気になった店をタップ(クリック)します</li>
+                <li>使えるポイントと支払方法が表示されます</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">一覧画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">投稿追加画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/add.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </nav>
+        </div>
+      </div>
       <br />
       <br />
       <br />
+      <br /><br />
       <h1 id="kategori">飲食店</h1>
 
       <!-- アコーディオン改行コード -->
@@ -1068,25 +1160,25 @@
 
       <!--footer開始-->
       <footer>
-        <nav>
-          <ul>
-            <li id="ul-list-item1">
-              <a href="index.html" class="black"
-                ><i class="fa-solid fa-house"></i>ホーム</a
-              >
-            </li>
-            <li id="ul-list-item2">
-              <a href="google_maps.html" class="black"
-                ><i class="fa-solid fa-location-dot"></i> 一覧</a
-              >
-            </li>
-            <li id="ul-list-item3">
-              <a href="add-list.html" class="black"
-                ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
-              >
-            </li>
-          </ul>
-        </nav>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="index.html" class="black"
+              ><i id="footer-icon" class="fa-solid fa-house"></i> ホーム　</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="list.html" class="black"
+              ><i id="footer-icon" class="fa-solid fa-location-dot"></i>
+              一覧　</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="posting.html" class="black"
+              ><i id="footer-icon" class="fa-solid fa-user-plus"></i>
+              投稿追加</a
+            >
+          </li>
+        </ul>
       </footer>
 
       <!--footer終了-->
@@ -1094,8 +1186,75 @@
 
     <!--スマホ画面-->
     <div class="for-sp">
+      <div id="header">
+        <a id="tb-title"
+          ><i id="title-icon" class="fa-solid fa-cash-register"></i> 決済先生</a
+        >
+        <div class="wrapper" class="help">
+          <div class="hamburger">
+            <a
+              ><i
+                id="icon-mark"
+                class="fa-solid fa-circle-info"
+                color="white"
+              ></i
+            ></a>
+          </div>
+          <nav class="menu">
+            <b id="hanbur-title">　操作説明　</b>
+            <br />
+            <br />
+            <div>
+              <ul>
+                <li id="sub-title">ホーム画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>気になった店をタップ(クリック)します</li>
+                <li>使えるポイントと支払方法が表示されます</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">一覧画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/home.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <ul>
+                <li id="sub-title">投稿追加画面</li>
+              </ul>
+              <img id="shop-explain" src="./ホーム画面用画像/add.jpg" />
+              <ol>
+                <li>メニュー2</li>
+                <li>メニュー3</li>
+                <li>メニュー4</li>
+                <li>メニュー5</li>
+              </ol>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+            </div>
+          </nav>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
       <!--飲食店１個目-->
-      <h2 id="food-jump">　飲食店</h2>
+      <h2 id="kategori">飲食店</h2>
       <div id="shop-mozi">
         <div class="acordion-title">
           <img
@@ -1105,6 +1264,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmac-pay.png?alt=media&token=8b7c015b-36d5-46fc-9b8a-06790168a5c4"
           />
         </div>
@@ -1120,6 +1280,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2FStarbucks-pay.png?alt=media&token=bfa6bb3a-e867-4f79-adfb-2af1d85c4814"
           />
         </div>
@@ -1135,6 +1296,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyosinoya-pay.png?alt=media&token=23db34f8-997b-46a7-9b4d-6c5b092af38f"
           />
         </div>
@@ -1150,6 +1312,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsukiya-pay.png?alt=media&token=7ff866fa-2f5a-474d-97e9-c231f1ac94c8"
           />
         </div>
@@ -1165,6 +1328,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmargame-pay.png?alt=media&token=6b33fbe4-bb9e-4881-a00c-623db7cb5bc7"
           />
         </div>
@@ -1180,13 +1344,17 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmos-pay.png?alt=media&token=acfb39b0-2d75-4e3a-b759-3077ab3cc15c"
           />
         </div>
       </div>
 
       <!--家電１個目-->
-      <h2 id="electronic-jump"><br />　家電</h2>
+      <br />
+      <br />
+      <br />
+      <h2 id="kategori">家電</h2>
       <div id="shop-mozi">
         <div class="acordion-title">
           <img
@@ -1196,6 +1364,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fedon-pay.png?alt=media&token=16da84aa-5407-4de6-9992-2c01c38a7a40"
           />
         </div>
@@ -1211,6 +1380,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fjoshin-pay.png?alt=media&token=7f0c98d0-1f43-4c4a-9ef9-69732cc919c7"
           />
         </div>
@@ -1226,6 +1396,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fbigkamera-pay.png?alt=media&token=eb79e882-1bf0-4d5c-8b7a-879045e83515"
           />
         </div>
@@ -1241,6 +1412,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyamada-pay.png?alt=media&token=d602dae6-3973-455d-b354-b2ed0ac2066d"
           />
         </div>
@@ -1256,6 +1428,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fks-pay.png?alt=media&token=66e12184-eef3-4159-8ba8-0d25bc23c7e4"
           />
         </div>
@@ -1271,13 +1444,17 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkozima-pay.png?alt=media&token=8efd2bd3-3396-4dd2-a570-a1208e2f3b00"
           />
         </div>
       </div>
 
       <!--ファッション１個目-->
-      <h2 id="fashion-jump"><br />　ファッション</h2>
+      <br />
+      <br />
+      <br />
+      <h2 id="kategori">ファッション</h2>
       <div id="shop-mozi">
         <div class="acordion-title">
           <img
@@ -1287,6 +1464,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgu-pay.png?alt=media&token=c7da8aee-cfec-4ea0-86b6-7862005e5d21"
           />
         </div>
@@ -1302,6 +1480,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fyunikuro-pay.png?alt=media&token=29e05a95-50d4-4bf4-806e-10723dd125c2"
           />
         </div>
@@ -1317,6 +1496,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fh%26m-pay.png?alt=media&token=3ec77960-0b57-4069-8728-4293af1a8a29"
           />
         </div>
@@ -1332,6 +1512,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fright-on-pay.png?alt=media&token=df086e1e-ee73-4c41-9d4c-83bf0c54c114"
           />
         </div>
@@ -1347,6 +1528,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwego-pay.png?alt=media&token=8f08dbe5-c688-4373-9082-4616d277761d"
           />
         </div>
@@ -1362,13 +1544,17 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fgap-pay.png?alt=media&token=8c8533df-8bcc-4354-aed3-61069035a86c"
           />
         </div>
       </div>
 
       <!--ドラッグストア１個目-->
-      <h2 id="drug-jump"><br />　ドラッグストア</h2>
+      <br />
+      <br />
+      <br />
+      <h2 id="kategori">ドラッグストア</h2>
       <div id="shop-mozi">
         <div class="acordion-title">
           <img
@@ -1378,6 +1564,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugi-pay.png?alt=media&token=d07a61dc-43c0-4aef-bfb2-bd83d046effc"
           />
         </div>
@@ -1393,6 +1580,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fsugiyama-pay.png?alt=media&token=6ce6bf74-77b2-42cc-8f67-e5a812a87a94"
           />
         </div>
@@ -1408,6 +1596,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fmatumoto-pay.png?alt=media&token=56e35d3f-a337-4d12-9531-e6d291b59fca"
           />
         </div>
@@ -1423,6 +1612,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkurieito-pay.png?alt=media&token=3c8caf3e-8298-4949-8a5c-18ada47d28fe"
           />
         </div>
@@ -1438,6 +1628,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fwelcia-pay.png?alt=media&token=7a0b9621-fd35-4573-a74f-0bb39a3a8e42"
           />
         </div>
@@ -1453,6 +1644,7 @@
         </div>
         <div class="acordion-contents">
           <img
+            id="shop-pay"
             src="https://firebasestorage.googleapis.com/v0/b/montapoint-7b9dd.appspot.com/o/MontaPoint%2Fkosumosu-pay.png?alt=media&token=6186c2f5-92ee-4df8-b1a7-a26b855df616"
           />
         </div>
@@ -1461,25 +1653,25 @@
       <br />
       <!--footer開始-->
       <footer>
-        <nav>
-          <ul>
-            <li id="ul-list-item1">
-              <a href="index.html" class="black"
-                ><i class="fa-solid fa-house"></i>ホーム</a
-              >
-            </li>
-            <li id="ul-list-item2">
-              <a href="google_maps.html" class="black"
-                ><i class="fa-solid fa-location-dot"></i> 一覧</a
-              >
-            </li>
-            <li id="ul-list-item3">
-              <a href="add-list.html" class="black"
-                ><i class="fa-solid fa-user-plus"></i> 投稿追加</a
-              >
-            </li>
-          </ul>
-        </nav>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="index.html" class="nav-list-item" class="black"
+              ><i id="footer-icon" class="fa-solid fa-house"></i> ホーム　</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="list.html" class="black"
+              ><i id="footer-icon" class="fa-solid fa-location-dot"></i>
+              一覧　</a
+            >
+          </li>
+          <li class="nav-list-item">
+            <a href="posting.html" class="black"
+              ><i id="footer-icon" class="fa-solid fa-user-plus"></i>
+              投稿追加</a
+            >
+          </li>
+        </ul>
       </footer>
 
       <!--footer終了-->
