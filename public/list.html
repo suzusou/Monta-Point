@@ -57,9 +57,9 @@
     </footer>
     <!--footer終了-->
 
-    <form id="search-all" action="" onsubmit="return func1()">
-      <input type="search" name="search" id="search-box" placeholder="キーワードを入力" />
-      <input type="submit" name="submit" id="search-submit" class="search-submit" value="検索" />
+    <form id="search-all" action="" onsubmit="return func2()">
+      <input type="search" name="search" id="search-box2" placeholder="キーワードを入力" />
+      <input type="submit" name="submit" id="search-submit2" class="search-submit" value="検索" />
     </form>
     <!-- ---------------------------------------------------------------------------------------------- -->
   </div>
@@ -73,6 +73,10 @@
   <script type="module" src="./js/list.js"></script>
   <script language="javascript" type="text/javascript">
     const func1 = () => {
+      // actionで指定した先に遷移させない
+      return false;
+    }
+    const func2 = () => {
       // actionで指定した先に遷移させない
       return false;
     }

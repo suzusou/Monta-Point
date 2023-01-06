@@ -141,7 +141,7 @@ function showResult(result) {
     console.log(result)
 
     var splitLatLng = result.Feature[0].Geometry.Coordinates.split(',');
-   
+
     var paySplit = window.globalData.payData[window.globalData.count].split(',');
     console.log(paySplit);
     var content = "";
@@ -381,11 +381,11 @@ function showResult_localSearch(result) {
 }
 
 // 検索機能　↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-function showAddressZoom() {
+function showAddressZoom(query) {
 
-  var querySearch = document.getElementById('search-box').value;
+  // var querySearch = document.getElementById('search-box').value;
 
-  var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(querySearch) + "&output=json&callback=execFitBounds&results=1&ac=" + ac_code;
+  var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query) + "&output=json&callback=execFitBounds&results=1&ac=" + ac_code;
   callJSONP_Search(urlSearch);
 
 }
@@ -411,8 +411,8 @@ function execFitBounds(result) {
 
 
     var latLngBounds = new google.maps.LatLngBounds(
-      new google.maps.LatLng(Number(splitLatLng_Search[1]) - 0.01, Number(splitLatLng_Search[0]) - 0.01),
-      new google.maps.LatLng(Number(splitLatLng_Search[1]) + 0.01, Number(splitLatLng_Search[0]) + 0.01)
+      new google.maps.LatLng(Number(splitLatLng_Search[1]) - 0.001, Number(splitLatLng_Search[0]) - 0.001),
+      new google.maps.LatLng(Number(splitLatLng_Search[1]) + 0.001, Number(splitLatLng_Search[0]) + 0.001)
     );
 
     console.log(latLngBounds);
@@ -424,15 +424,20 @@ function execFitBounds(result) {
   }
 }
 
+var search = document.getElementById("search-submit");
+var search2 = document.getElementById("search-submit2");
 
-var search = document.getElementsByClassName('search-submit');
-var btns = Array.from(search);
 
-btns.forEach(function (btn) {
-  btn.addEventListener("click", function () {
-    showAddressZoom();
-  });
-})
+
+search.addEventListener("click", function () {
+  var querySearch = document.getElementById('search-box').value;
+  showAddressZoom(querySearch);
+});
+search2.addEventListener("click", function () {
+  var querySearch2 = document.getElementById('search-box2').value;
+  showAddressZoom(querySearch2);
+});
+
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
 function delete_marker() {

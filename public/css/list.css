@@ -197,7 +197,7 @@ header#header-all {
     outline: 0;
   }
 
-  #search-box {
+  #search-box2 {
     position: absolute;
     right: 90px;
     width: 225px;
@@ -211,7 +211,7 @@ header#header-all {
     z-index: 10;
   }
 
-  #search-submit {
+  #search-submit2 {
     position: absolute;
     border: none;
     top: 10px;
