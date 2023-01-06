@@ -6,7 +6,7 @@ function initMap() {
   latLng = new google.maps.LatLng(35.17263, 136.88602);
 
   var options = {
-    zoom: 8,       //地図の縮尺値を設定する
+    zoom: 10,       //地図の縮尺値を設定する
     center: latLng,  //地図の中心座標を設定する
     center: latLng, //地図の中心座標を設定する
     mapTypeControl: false, //falseでマップ名及び航空写真（マップタイプ）の非表示
@@ -21,13 +21,9 @@ function initMap() {
 
   map.addListener('mouseup', function () {
 
-    var tyuusin = map.getCenter();
+    var mapCenter = map.getCenter();
 
-    // var 中心座標 = tyuusin.lat() + "," + tyuusin.lng();
-
-    // console.log(中心座標);
-
-    Mapltlg = new google.maps.LatLng(tyuusin.lat(), tyuusin.lng());
+    Mapltlg = new google.maps.LatLng(mapCenter.lat(), mapCenter.lng());
 
     geol(Mapltlg);
 
@@ -75,11 +71,11 @@ function geol_showResult(result) {
       console.log(str);
       if (window.globalData.address != str) {
         window.globalData.address = str;
-        if (boola) {
+        if (bool_delete) {
           delete_marker();
-          window.globalData.a();
+          window.globalData.ReadFirebase();
         } else {
-          boolb = false;
+          bool_restarting = false;
         }
       }
     } catch (e) {
@@ -94,11 +90,11 @@ function geol_showResult(result) {
           console.log(str);
           if (window.globalData.address != str) {
             window.globalData.address = str;
-            if (boola) {
+            if (bool_delete) {
               delete_marker();
-              window.globalData.a();
+              window.globalData.ReadFirebase();
             } else {
-              boolb = false;
+              bool_restarting = false;
             }
           }
         } catch (e) {
@@ -145,11 +141,7 @@ function showResult(result) {
     console.log(result)
 
     var splitLatLng = result.Feature[0].Geometry.Coordinates.split(',');
-    // var realLat = splitLatLng[1] + "," + splitLatLng[0];
-
-    // alert(result.ResultInfo.Count + "件の結果が見つかりました。\n" +
-    //   result.Feature[0].Name + "の座標は" + realLat + "です。" + splitLatLng[2]);
-    // console.log(window.globalData.payData[window.globalData.count]);
+   
     var paySplit = window.globalData.payData[window.globalData.count].split(',');
     console.log(paySplit);
     var content = "";
@@ -199,8 +191,7 @@ function showResult(result) {
       }
     }
     console.log("content: " + content);
-    var titleInfo = result.Feature[0].Name + "　：　" + result.Feature[0].Property.Address;
-
+    var titleInfo = result.Feature[0].Name;
 
     YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
 
@@ -209,9 +200,11 @@ function showResult(result) {
       position: YahooLatLng, //マーカーの表示位置を設定する
       title: titleInfo,
     });
+
     infoWindow[window.globalData.count] = new google.maps.InfoWindow({
       content: content
     });
+
     for (let i = 0; i <= window.globalData.count; i++) {
       if (marker[i] != null) {
 
@@ -226,35 +219,30 @@ function showResult(result) {
     }
 
   } else {
-
     alert("検索結果が見つかりませんでした。");
-
   }
-
 
   if (window.globalData.count < window.globalData.addressData.length - 1) {
     window.globalData.count++;
     showAddress();
     console.log(window.globalData.count);
   } else {
-    // console.timeEnd("count");
+    console.timeEnd("showAddressが終わり");
   }
 }
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // 以下localSearch
 
-// var count_localSearch = 0;
-
 var miss_localSearch = [];
 
-var boola = true;
+var bool_delete = true;
 
-var boolb = true;
+var bool_restarting = true;
 
 //住所を表示する
 function showAddress_localSearch() {
-  boola = false;
+  bool_delete = false;
   var query_localSearch = window.globalData.localSearch_store[window.globalData.localSearch_count];
   var url_localSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query_localSearch) + "&ac=" + ac_code + "&output=json&callback=showResult_localSearch&results=1";
   callJSONP_localSearch(url_localSearch);
@@ -276,7 +264,7 @@ function callJSONP_localSearch(url_localSearch) {
   // scriptタグをたまりすぎるのを防ぐ
   if (window.globalData.localSearch_count % 100 == 0 && window.globalData.localSearch_count != 0) {
     console.log("削除します");
-    for (let a = 0; a < 100; a++) {
+    for (let i = 0; i < 100; i++) {
       document.getElementById('pin').remove();
     }
   }
@@ -295,11 +283,6 @@ function showResult_localSearch(result) {
 
     latLang_localSearch = new google.maps.LatLng(Number(splitLatLng_localSearch[1]), Number(splitLatLng_localSearch[0]));
 
-    // var marker_localSearch = new google.maps.Marker({
-    //   map: map,           //表示している地図を指定する
-    //   position: latLang_localSearch, //マーカーの表示位置を設定する
-    //   title: titleInfo_localSearch,
-    // });
     marker_localSearch[window.globalData.localSearch_count] = new google.maps.Marker({
       map: map,           //表示している地図を指定する
       position: latLang_localSearch, //マーカーの表示位置を設定する
@@ -378,8 +361,7 @@ function showResult_localSearch(result) {
 
   }
 
-  // if (count_localSearch < window.globalData.localSearch_store.length - 1) {
-  if (boolb) {
+  if (bool_restarting) {
     if (window.globalData.localSearch_count < window.globalData.localSearch_store.length - 1) {
       window.globalData.localSearch_count++;
 
@@ -387,13 +369,13 @@ function showResult_localSearch(result) {
 
 
     } else {
-      boola = true;
+      bool_delete = true;
       console.log("検索に引っかからなかったのは　:　" + miss_localSearch)
     }
   } else {
-    delete_marker()
-    boolb = true;
-    window.globalData.a();
+    delete_marker();
+    bool_restarting = true;
+    window.globalData.ReadFirebase();
   }
 
 }

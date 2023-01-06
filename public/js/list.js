@@ -26,7 +26,7 @@ let localSearch_store = [];
 let localSearch_pay = [];
 
 // 決済先生 住所登録の全ての情報を取得
-async function a() {
+async function ReadFirebase() {
   storeData = [];
   addressData = [];
   payData = [];
@@ -46,14 +46,12 @@ async function a() {
   })
 
   const shot2 = await getDoc(doc(db, "決済先生", area));
-  let aa = 0;
+
   for (let key in shot2.data()) {
-    aa++
     localSearch_store.push(key);
     localSearch_pay.push(shot2.data()[key]);
 
   }
-  console.log("count：" + aa)
 
   console.log("storeData: " + storeData);
   console.log("addressData: " + addressData);
@@ -68,50 +66,14 @@ async function a() {
   window.globalData.localSearch_store = localSearch_store;
   window.globalData.localSearch_pay = localSearch_pay;
 
-  // setInterval(function () {
-  //   showAddress();
-  //   if(window.globalData.count>=addressData.length-1){
-  //     clearInterval();
-  //   }
-  //   window.globalData.count++;
-  //   console.log(count);
-
-  // }, 1000)
-
-  // var tid = setInterval(function () {
+ 
   if (window.globalData.addressData.length > 0) {
     showAddress();
   }
   showAddress_localSearch();
   console.log(window.globalData.count);
-  //   if (window.globalData.count >= addressData.length - 1) {
-  //     clearInterval(tid);
-  //   }
-  // }, 1000)
-
-  // setPin();
+  
 }
-// Item.prototype.setValue = function (val) {
-//   this._val = val;
-//   alert('Itemの値が ->' + val + '<- に変更された。');
-// }
-
-// document.getElementById("sample").addEventListener("click", function () {
-
-
-//   for (let a = 0; a < addressData.length; a++) {
-//     setTimeout(function () {
-//       console.log( window.globalData.count);
-//       showAddress();
-//       window.globalData.count++;
-//     }, 1000)
-//   }
-//   console.log("a");
-// });
-
-
-// console.log("addressData.length: " + addressData.length);
-
 
 window.globalData = {};
 window.globalData.address = "";
@@ -123,4 +85,4 @@ window.globalData.localSearch_count = count;
 window.globalData.localSearch_store = localSearch_store;
 window.globalData.localSearch_pay = localSearch_pay;
 
-window.globalData.a = a;
+window.globalData.ReadFirebase = ReadFirebase;
