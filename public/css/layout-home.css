@@ -633,7 +633,7 @@ summary::-webkit-details-marker {
   footer {
     /*footerの装飾*/
     width: 100vw;
-    height: 50px;
+    height: 6.5vh;
     justify-content: space-around;
     background-color: #fee199;
     color: #fff;
@@ -652,28 +652,29 @@ summary::-webkit-details-marker {
     vertical-align: middle;
     /* justify-content: space-around; */
     position: fixed;
-    margin-top: 4px;
+    margin-top: 3px;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-    font-size: 25px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 600;
     list-style: none;
   }
   .nav-list-item {
     list-style: none;
     display: inline-block;
+    width: 31vw;
     text-align: center;
     vertical-align: middle;
     justify-content: space-around;
-    margin-top: auto;
+    margin-top: 8px;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
     color: #000;
   }
   #footer-icon {
-    font-size: 25px;
+    font-size: 16px;
   }
   .black {
     color: #000;
@@ -845,7 +846,7 @@ summary::-webkit-details-marker {
   footer {
     /*footerの装飾*/
     width: 100vw;
-    height: 50px;
+    height: 6.5vh;
     justify-content: space-around;
     background-color: #fee199;
     color: #fff;
@@ -864,17 +865,18 @@ summary::-webkit-details-marker {
     vertical-align: middle;
     /* justify-content: space-around; */
     position: fixed;
-    margin-top: 13px;
+    margin-top: 8px;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-    font-size: 15px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 600;
     list-style: none;
   }
   .nav-list-item {
     list-style: none;
     display: inline-block;
+    width: 31vw;
     text-align: center;
     vertical-align: middle;
     justify-content: space-around;
@@ -885,7 +887,7 @@ summary::-webkit-details-marker {
     color: #000;
   }
   #footer-icon {
-    font-size: 15px;
+    font-size: 16px;
   }
   .black {
     color: #000;
