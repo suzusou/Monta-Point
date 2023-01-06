@@ -122,32 +122,6 @@ header#header-all {
     outline: 0;
 }
 
-#search-box {
-    position: absolute;
-    right: 90px;
-    width: 225px;
-    height: 40px;
-    border-radius: 10px;
-    font-size: 15px;
-    padding-left: 5px;
-    border: 2px solid #ddd;
-    top: 9px;
-    outline: none;
-}
-
-#search-submit {
-    position: absolute;
-    border: none;
-    top: 10px;
-    right: 6px;
-    padding: 2px 15px;
-    background-color: lightseagreen;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    box-shadow: 1px 1px 5px black;
-}
-
 
 /* ヘッダー部分 */
 
