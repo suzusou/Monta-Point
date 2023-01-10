@@ -134,6 +134,8 @@ function callJSONP(url) {
 }
 var marker = [];
 var infoWindow = [];
+var infoNumber = 0;
+
 //JSONPの結果として実行される関数
 function showResult(result) {
 
@@ -190,6 +192,9 @@ function showResult(result) {
           break;
       }
     }
+
+    content = content + "<br>" + result.Feature[0].Name;
+
     console.log("content: " + content);
     var titleInfo = result.Feature[0].Name;
 
@@ -215,6 +220,15 @@ function showResult(result) {
         marker[i].addListener('mouseout', function (e) {
           infoWindow[i].close(map, marker[i]);
         });
+
+        // marker[i].addListener('click', function (e) {
+        //   infoWindow[infoNumber].close(map, marker[infoNumber]);
+        //   infoWindow_localSearch[infoNumber].close(map, marker_localSearch[infoNumber]);
+        //   infoNumber = i;
+        //   infoWindow[i].open(map, marker[i]);
+        // });
+
+
       }
     }
 
@@ -336,6 +350,9 @@ function showResult_localSearch(result) {
           break;
       }
     }
+
+    content_localSearch = content_localSearch + "<br>" + result.Feature[0].Name;
+
     infoWindow_localSearch[window.globalData.localSearch_count] = new google.maps.InfoWindow({
       content: content_localSearch
     });
@@ -350,6 +367,15 @@ function showResult_localSearch(result) {
         marker_localSearch[i].addListener('mouseout', function (e) {
           infoWindow_localSearch[i].close(map, marker_localSearch[i]);
         });
+
+        // marker_localSearch[i].addListener('click', function (e) {
+        //   console.log(infoNumber);
+        //   infoWindow_localSearch[infoNumber].close(map, marker_localSearch[infoNumber]);
+        //   infoNumber = i;
+        //   infoWindow_localSearch[i].open(map, marker_localSearch[i]);
+        // });
+
+
       }
     }
 
