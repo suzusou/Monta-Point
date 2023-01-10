@@ -10,6 +10,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" />
+
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon/favicon.ico">
+    <script>
+      if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('sw.js').then(registration => {
+              console.log('successful',registration);
+          }).catch(err => {
+              console.log('failed',err);
+          });
+      }
+  </script>
   </head>
 
   <body>
