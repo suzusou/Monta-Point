@@ -360,6 +360,10 @@ function showResult_localSearch(result) {
     for (let i = 0; i <= window.globalData.localSearch_count; i++) {
       if (marker_localSearch[i] != null) {
 
+        marker_localSearch[i].addListener('click', function (e) {
+          infoWindow_localSearch[i].open(map, marker_localSearch[i]);
+        });
+
         marker_localSearch[i].addListener('mouseover', function (e) {
           infoWindow_localSearch[i].open(map, marker_localSearch[i]);
         });
