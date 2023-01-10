@@ -10,7 +10,7 @@
 //     window.scrollTo({
 //       top: 400, //上からの位置
 //       //   left: 100, //左からの位置
-//       behavior: "smooth", //smoothでスクロールしながら移動
+//       behavior: "smooth", //smoothでスクロールしながら移動a
 //     });
 //   }
 // };
