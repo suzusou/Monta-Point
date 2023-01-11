@@ -362,6 +362,15 @@ function showResult_localSearch(result) {
 
         marker_localSearch[i].addListener('click', function (e) {
           infoWindow_localSearch[i].open(map, marker_localSearch[i]);
+          for (let a = 0; a < infoWindow_localSearch.length; a++) {
+            if (a != i) {
+              try{
+                infoWindow_localSearch[a].close(map, marker_localSearch[a]);
+              }catch(e){
+
+              }
+            }
+          }
         });
 
         marker_localSearch[i].addListener('mouseover', function (e) {
