@@ -86,29 +86,21 @@ function showResult(result) {
                 title: titleInfo,
             });
 
-
-
             infoWindow[i] = new google.maps.InfoWindow({
-
                 content: window.global.content
+            });
 
+            marker[i].addListener('click', function (e) {
+                infoWindow[i].open(map, marker[i]);
             });
 
             marker[i].addListener('mouseover', function (e) {
-
-                // console.log(marker[int].title);
                 infoWindow[i].open(map, marker[i]);
-
             });
 
             marker[i].addListener('mouseout', function (e) {
-
-                // console.log(marker[int].title);
                 infoWindow[i].close(map, marker[i]);
-
             });
-
-            console.log(result.Feature[i].Name);
 
         }
 

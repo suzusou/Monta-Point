@@ -42,8 +42,8 @@ document.getElementById("send").addEventListener("click", async function () {
     }
   }
 
-   // 最後の一文字を消去
-   pay = payStr.slice(0, -1);
+  // 最後の一文字を消去
+  pay = payStr.slice(0, -1);
 
   // 何が押されたかをコンソールに出す
   console.log(img);
@@ -121,6 +121,8 @@ document.getElementById("send").addEventListener("click", async function () {
       // Firebaseの登録処理をする
       SetFirebase();
     }, 500)
+  } else {
+    alert("必要な項目が入力されていません。")
   }
   // imgを初期化する
   img = [];
@@ -163,22 +165,6 @@ document.getElementById("send").addEventListener("click", async function () {
   }
 });
 
-
-// リアルタイムの更新を取得する
-// const unsub = onSnapshot(doc(db, "決済先生sample", store.value), (doc) => {
-//   console.log("store data: ", doc.id);
-//   console.log("address data: ", doc.data().address);
-//   console.log("pay data: ", doc.data().pay);
-// });
-
-
-// 全ての情報を取得
-// window.onload = async function () {
-//   const shot = await getDocs(collection(db, "決済先生"));
-//   shot.forEach((doc) => {
-//     console.log(doc.id, "=>", doc.data().pay);
-//   })
-// }
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------*/
 // グローバル変数の設定
