@@ -213,6 +213,19 @@ function showResult(result) {
     for (let i = 0; i <= window.globalData.count; i++) {
       if (marker[i] != null) {
 
+        marker[i].addListener('click', function (e) {
+          infoWindow[i].open(map, marker[i]);
+          for (let a = 0; a < infoWindow.length; a++) {
+            if (a != i) {
+              try{
+                infoWindow[a].close(map, marker[a]);
+              }catch(e){
+
+              }
+            }
+          }
+        });
+
         marker[i].addListener('mouseover', function (e) {
           infoWindow[i].open(map, marker[i]);
         });
@@ -220,14 +233,6 @@ function showResult(result) {
         marker[i].addListener('mouseout', function (e) {
           infoWindow[i].close(map, marker[i]);
         });
-
-        // marker[i].addListener('click', function (e) {
-        //   infoWindow[infoNumber].close(map, marker[infoNumber]);
-        //   infoWindow_localSearch[infoNumber].close(map, marker_localSearch[infoNumber]);
-        //   infoNumber = i;
-        //   infoWindow[i].open(map, marker[i]);
-        // });
-
 
       }
     }
@@ -380,14 +385,6 @@ function showResult_localSearch(result) {
         marker_localSearch[i].addListener('mouseout', function (e) {
           infoWindow_localSearch[i].close(map, marker_localSearch[i]);
         });
-
-        // marker_localSearch[i].addListener('click', function (e) {
-        //   console.log(infoNumber);
-        //   infoWindow_localSearch[infoNumber].close(map, marker_localSearch[infoNumber]);
-        //   infoNumber = i;
-        //   infoWindow_localSearch[i].open(map, marker_localSearch[i]);
-        // });
-
 
       }
     }

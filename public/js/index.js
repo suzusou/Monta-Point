@@ -1,19 +1,3 @@
-// document.getElementById("search-submit").onclick = function () {
-//   // 処理
-//   var search_text = document.getElementById("search-box");
-//   console.log(search_text.value);
-//   if (
-//     search_text.value == "mac" ||
-//     search_text == "マック" ||
-//     search_text == "マクドナルド"
-//   ) {
-//     window.scrollTo({
-//       top: 400, //上からの位置
-//       //   left: 100, //左からの位置
-//       behavior: "smooth", //smoothでスクロールしながら移動a
-//     });
-//   }
-// };
 jQuery(function ($) {
   $(".acordion-contents").css("display", "none");
   // 質問の答えをあらかじめ非表示
