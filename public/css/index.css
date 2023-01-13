@@ -684,6 +684,12 @@ summary::-webkit-details-marker {
   a {
     text-decoration: none;
   }
+  @media screen and (orientation: landscape) {
+
+    footer {
+      display: none;
+    }
+  }
 }
 
 /*スマホ画面*/
@@ -1040,5 +1046,11 @@ summary::-webkit-details-marker {
   .acordion-contents {
     clear: both;
     text-align: center;
+  }
+  @media screen and (orientation: landscape) {
+
+    footer {
+      display: none;
+    }
   }
 }

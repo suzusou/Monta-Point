@@ -219,4 +219,11 @@ footer {
     }
 
     /*footerレイアウト終了*/
+
+    @media screen and (orientation: landscape) {
+
+        footer {
+          display: none;
+        }
+      }
 }
