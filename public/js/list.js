@@ -61,6 +61,7 @@ async function ReadFirebase() {
   window.globalData.addressData = addressData;
   window.globalData.payData = payData;
   window.globalData.count = count;
+  window.globalData.storeData = storeData;
 
   window.globalData.localSearch_count = count;
   window.globalData.localSearch_store = localSearch_store;

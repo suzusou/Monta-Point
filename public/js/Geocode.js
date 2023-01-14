@@ -193,10 +193,10 @@ function showResult(result) {
       }
     }
 
-    content = content + "<br>" + result.Feature[0].Name;
+    content = content + "<br>" + window.globalData.storeData[window.globalData.count];
 
     console.log("content: " + content);
-    var titleInfo = result.Feature[0].Name;
+    var titleInfo = window.globalData.storeData[window.globalData.count];
 
     YahooLatLng = new google.maps.LatLng(Number(splitLatLng[1]), Number(splitLatLng[0]));
 
