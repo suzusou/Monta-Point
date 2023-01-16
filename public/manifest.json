@@ -1,7 +1,7 @@
 {
     "name": "montapoint",
     "short_name": "monta",
-    "description": "PWAテスト用",
+    "description": "決済先生",
     "icons": [
         {
             "src": "icon/決済先生1.png",
