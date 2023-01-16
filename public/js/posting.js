@@ -134,7 +134,7 @@ document.getElementById("send").addEventListener("click", async function () {
       console.log("検索結果が見つかった" + count);
       // Firestoreに書き込む
       try {
-        await updateDoc(doc(db, "決済先生sample", str2), {
+        await updateDoc(doc(db, "決済先生", str2), {
           [store.value]: pay
         });
         console.log("登録完了しました。");
