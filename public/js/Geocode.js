@@ -73,6 +73,7 @@ function geol_showResult(result) {
         window.globalData.address = str;
         if (bool_delete) {
           delete_marker();
+          miss_localSearch=[];
           window.globalData.ReadFirebase();
         } else {
           bool_restarting = false;
