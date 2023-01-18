@@ -420,8 +420,6 @@ function showResult_localSearch(result) {
 // 検索機能　↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 function showAddressZoom(query) {
 
-  // var querySearch = document.getElementById('search-box').value;
-
   var urlSearch = "https://map.yahooapis.jp/search/local/V1/localSearch?appid=dj00aiZpPVdnQVloSFUxTEdUaSZzPWNvbnN1bWVyc2VjcmV0Jng9ZDM-&query=" + encodeURI(query) + "&output=json&callback=execFitBounds&results=1&ac=" + ac_code;
   callJSONP_Search(urlSearch);
 
